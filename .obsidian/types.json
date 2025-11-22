@@ -5,6 +5,7 @@
     "tags": "tags",
     "progress": "number",
     "tes": "multitext",
-    "isi tiap bab": "text"
+    "isi tiap bab": "text",
+    "language": "multitext"
   }
 }

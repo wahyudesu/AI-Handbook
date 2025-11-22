@@ -6,6 +6,7 @@
       {
         "id": "a694e756c7c24e6e",
         "type": "tabs",
+        "dimension": 62.03947368421052,
         "children": [
           {
             "id": "672e31c0ef516bca",
@@ -24,11 +25,12 @@
         ]
       },
       {
-        "id": "9341169e6c6ac897",
+        "id": "58d6715b929cd0c9",
         "type": "tabs",
+        "dimension": 37.96052631578947,
         "children": [
           {
-            "id": "3157716154d263d4",
+            "id": "412063da39759ddc",
             "type": "leaf",
             "state": {
               "type": "markdown",
@@ -109,40 +111,8 @@
       {
         "id": "16919a8871405cb2",
         "type": "tabs",
+        "dimension": 64.39688715953308,
         "children": [
-          {
-            "id": "d43a50aeb9f02e17",
-            "type": "leaf",
-            "state": {
-              "type": "backlink",
-              "state": {
-                "file": "Welcome.md",
-                "collapseAll": false,
-                "extraContext": false,
-                "sortOrder": "alphabetical",
-                "showSearch": false,
-                "searchQuery": "",
-                "backlinkCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-coming-in",
-              "title": "Backlinks for Welcome"
-            }
-          },
-          {
-            "id": "dc4b3242dfc003c1",
-            "type": "leaf",
-            "state": {
-              "type": "outgoing-link",
-              "state": {
-                "file": "Welcome.md",
-                "linksCollapsed": false,
-                "unlinkedCollapsed": true
-              },
-              "icon": "links-going-out",
-              "title": "Outgoing links from Welcome"
-            }
-          },
           {
             "id": "0dc51ada9057ccdf",
             "type": "leaf",
@@ -193,8 +163,8 @@
             "state": {
               "type": "annotations-outline",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "annotations-outline"
+              "icon": "message-square",
+              "title": "Enhanced Annotations"
             }
           },
           {
@@ -208,11 +178,12 @@
             }
           }
         ],
-        "currentTab": 4
+        "currentTab": 3
       },
       {
         "id": "e8ca7bb746c7394a",
         "type": "tabs",
+        "dimension": 35.60311284046693,
         "children": [
           {
             "id": "97e28fbc09a24395",
@@ -223,12 +194,33 @@
               "icon": "message-square",
               "title": "Enhanced Annotations"
             }
+          },
+          {
+            "id": "7de5b51e2cd4edbe",
+            "type": "leaf",
+            "state": {
+              "type": "highlights-sidebar",
+              "state": {},
+              "icon": "highlighter",
+              "title": "Highlights"
+            }
+          },
+          {
+            "id": "fec009baba23dfe6",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 345
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -244,12 +236,19 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "44a9e1dcffb4bbf2",
+  "active": "412063da39759ddc",
   "lastOpenFiles": [
+    "Data-AI-Handbook.md",
+    "Pasted image 20251123011214.png",
+    "Data-AI-Handbook.md.tmp.29835.1763834956030",
+    "Data-AI-Handbook.md.tmp.29835.1763834809119",
+    "Data-AI-Handbook.md.tmp.29835.1763834712830",
+    "Data-AI-Handbook.md.tmp.29835.1763834698385",
+    "Data-AI-Handbook.md.tmp.29835.1763834666644",
+    "Pasted image 20251123005534.png",
     "notebook",
     "Untitled.base",
     "README.md",
-    "data-preprocessing-cheatsheet.png",
-    "Data-AI-Handbook.md"
+    "data-preprocessing-cheatsheet.png"
   ]
 }

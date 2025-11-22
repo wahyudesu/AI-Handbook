@@ -3,6 +3,10 @@ tone: |-
   pendekatannya kayak teman yang saling berbagi, memang kami berasa jago gitu tapi kita gak terlalu menggurui, dan ngasih space buat eksplor di hal lain, selagi kita ngasih reousrce yang cukup
 
   ringan, padat, mudah diaplikasikan
+
+  Gunakan gaya straightforward, instruksional, semi-formal, dan praktikal, dikarenakan handbook ga lebih dari 40 halaman, harapannya penjelasan tiap bab itu padet, ga bertele tele dan berisi informasi yang penting-penting saja, meskipun itu, tetap ada isi berupa deskripsi paragraf supaya tetap menjelaskan dan relevan bagi pemula
+
+  iya gayanya seperti sedikit lebih tua ke yang sedikit lebih muda
 desain: Modern, Neon, Sederhana
 tags:
   - ML
@@ -17,6 +21,10 @@ isi tiap bab: |-
   gambar: intinya gambar punya orang untuk mempermudah memahami sesuatu
   kode: kode contoh penggunaan library/framework, penggunaan
   quotes: bisa berupa recommendation, question,
+language:
+  - id
+  - eng
+unique value: buku pedoman compact, tanpa bertele tele
 ---
 ## Table of Contents
 - [[#Pengantar|Pengantar]]
@@ -49,6 +57,10 @@ Materi tentang Data dan ML ini aku kurasi dari berbagai sumber dan pengalaman pr
 - Membuat Proof of Concept untuk startup/ide bisnis AI
 
 > This ebook is 75% written by human, 25% AI-assisted. The percentage reflects time allocation in resource curation, structuring, and sentence crafting.
+
+---
+
+gambar perbedaan AI/ML/DS sebagai dasar
 
 ---
 ## Data and Digital Use case
@@ -136,7 +148,7 @@ Use Case Prompt for Analysis Scenario
 - “Explain this complex metric in simple terms.”
 - “Draft an executive summary for my findings.”
 
-## EDA
+### EDA
 
 data cleaning dan processing itu part of penting
 
@@ -148,7 +160,7 @@ data mining
 
 lorem ipsum
 
-## Statistical Analysis
+### Statistical Analysis
 
 Data cleaning dan processing itu penting, tetapi statistik tidak kalah esensial. Statistik merupakan metode matematika yang digunakan untuk memahami, menjelaskan, dan menjawab berbagai pertanyaan terkait data. Melalui statistik, data yang sudah diproses dapat dianalisis secara terukur sehingga menghasilkan insight yang valid dan dapat dipertanggungjawabkan
 
@@ -171,21 +183,93 @@ Dari exploratory data analysis hingga perancangan eksperimen untuk pengujian hip
 >- readr untuk data loading
 >- caret untuk modeling dan evaluasi
 
-## Descriptive Statistics
+![[Pasted image 20251123005534.png]]
 
-Descriptive Statistics lorem ipsum lorem ipsum lorem ipsum
+#### Descriptive Statistics
 
-masih statistical analysis
+Offers methods to summarise data by transforming raw observations into meaningful information that is easy to interpret and share in the form of numbers graph, bar plots, histogram, pie chart, etc. Descriptive statistics is simply a process to describe our existing data.¶
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+```python
+# library python yang sering digunakan pada statistical analysis
+import math
+import numpy as np
+import pandas as pd
+import statistics
+import scipy.stats
+import matplotlib.pyplot as plt
+import seaborn as sns
+```
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+Library-library di atas adalah toolkit standar untuk analisis statistik di Python. NumPy dan Pandas untuk manipulasi data dan komputasi numerik, statistics dan scipy.stats untuk fungsi statistik, sementara matplotlib dan seaborn untuk visualisasi hasil analisis.
 
-ini rumus statistik
+**Measure of Central Tendancy**
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+Ketika kamu punya dataset dengan ratusan baris, kamu butuh satu nilai yang merepresentasikan keseluruhan data—seperti "berapa harga rumah tipikal?" atau "gaji rata-rata karyawan berapa?". Measure of central tendency memberikan nilai "pusat" ini: mean (rata-rata), median (nilai tengah), dan mode (nilai paling sering muncul). Berguna untuk quick summary, membandingkan grup data, atau sebagai baseline untuk deteksi outlier.
 
-## Inferential Statistics
+```python
+numeric_data = df.select_dtypes(exclude='object')
+categorical_data = df.select_dtypes(include='object')
+```
+
+Kode di atas memisahkan kolom numerik dan kategorikal dari dataframe. Pemisahan ini penting karena operasi statistik seperti mean atau variance hanya bisa diterapkan pada data numerik, sementara data kategorikal memerlukan treatment yang berbeda.
+
+```python
+# Mean of all the columns in dataframe
+df.mean()
+
+# Mean of individual column of dataframe
+df['column_1'].mean()
+
+from scipy.stats import gmean
+gmean(df['column_1'])
+
+statistics.harmonic_mean(df['column_1'])
+```
+
+**Mean (Rata-rata)** adalah ukuran central tendency yang paling umum digunakan. Ada tiga jenis mean yang bisa kita hitung:
+- **Arithmetic mean** (`.mean()`): Rata-rata biasa, menjumlahkan semua nilai lalu dibagi jumlah data. Paling sering dipakai untuk data yang terdistribusi normal.
+- **Geometric mean** (`gmean()`): Lebih cocok untuk data yang bersifat multiplikatif atau rasio, seperti growth rate atau return on investment.
+- **Harmonic mean** (`harmonic_mean()`): Berguna untuk rata-rata dari rasio atau rate, misalnya kecepatan rata-rata.
+
+```python
+df['column_1'].describe()  # Memberikan count, mean, std, min, Q1, median, Q3, max
+
+df.mode() # Nilai yang sering muncul
+
+statistics.median(df['column_1']) # Nilai tengah
+```
+pengukuran lainnya, seperti mode nilai yang sering muncul dan nilai tengah sering digunakan
+
+**Measure of Variability/Dispersion**
+
+Selain mengetahui nilai pusat data, kita juga perlu memahami seberapa tersebar datanya. Measure of variability memberikan informasi tentang bagaimana data bervariasi atau tersebar di sekitar nilai tengahnya. Semakin besar variabilitas, semakin beragam nilai-nilai dalam dataset.
+
+```python
+# Variance - mengukur seberapa jauh data tersebar dari mean
+df['column_1'].var()
+
+# Standard Deviation - akar dari variance, lebih mudah diinterpretasi
+df['column_1'].std()
+
+# Range - selisih antara nilai maksimum dan minimum
+df['column_1'].max() - df['column_1'].min()
+
+# Interquartile Range (IQR) - range dari 50% data di tengah
+Q1 = df['column_1'].quantile(0.25)
+Q3 = df['column_1'].quantile(0.75)
+IQR = Q3 - Q1
+```
+
+**Variance** mengukur seberapa jauh nilai-nilai individual dalam dataset dari mean-nya. Variance yang tinggi menunjukkan data sangat bervariasi dan tersebar luas, sedangkan variance rendah menandakan data cenderung berkumpul dekat dengan mean.
+
+**Standard Deviation** adalah akar kuadrat dari variance. Karena satuannya sama dengan data asli, standard deviation lebih mudah diinterpretasikan dibanding variance. Misalnya, jika data kita dalam satuan meter, standard deviation juga dalam meter.
+
+**Range** memberikan gambaran kasar tentang spread dengan melihat selisih nilai terbesar dan terkecil. Namun, range sangat sensitif terhadap outlier.
+
+**IQR (Interquartile Range)** lebih robust terhadap outlier karena hanya melihat 50% data di tengah (antara kuartil pertama dan ketiga). IQR sering digunakan untuk deteksi outlier dengan aturan: nilai yang berada di luar `Q1 - 1.5*IQR` atau `Q3 + 1.5*IQR` dianggap sebagai outlier potensial.
+
+![[Pasted image 20251123011214.png]]
+#### Inferential Statistics
 
 Descriptive Statistics lorem ipsum lorem ipsum lorem ipsum
 
@@ -276,7 +360,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
 model = LinearRegression().fit(X_train, y_train)
 
 # 4. Prediksi untuk rumah dengan rata-rata 120 kamar (ekstrem, untuk demo)
-prediksi = model.predict([[1201])
+prediksi = model.predict([[1201]])
 print(prediksi) # Output: sekitar 240000
 ```
 
