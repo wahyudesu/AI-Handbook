@@ -5,46 +5,108 @@
   "highlights": {
     "Data-AI-Handbook.md": [
       {
-        "id": "5pef87dzm",
-        "text": "perlu satu halaman lagi",
+        "id": "jbwbm8m6j",
+        "text": "\nhttps://www.kaggle.com/code/shivanirana63/guide-to-complete-statistical-analysis#2.Inferential-Statistics\nhttps://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html\nhttps://scipy-lectures.org/packages/statistics/\nhttps://www.statsmodels.org/stable/gettingstarted.html\n",
+        "tags": [],
+        "line": 203,
+        "startOffset": 12754,
+        "endOffset": 13060,
+        "filePath": "Data-AI-Handbook.md",
+        "footnoteCount": 1,
+        "footnoteContents": [
+          "\nhttps://www.kaggle.com/code/shivanirana63/guide-to-complete-statistical-analysis#2.Inferential-Statistics\nhttps://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html\nhttps://scipy-lectures.org/packages/statistics/\nhttps://www.statsmodels.org/stable/gettingstarted.html\n"
+        ],
+        "createdAt": 1763818567855,
+        "isNativeComment": true,
+        "type": "comment"
+      },
+      {
+        "id": "5w4mkorrk",
+        "text": "feature engineering ini mirip mirip partnya kayak , kamu bisa eksplor banyak soal feature engineering, seperti Feature selection\nFeature extraction\nVector embedding\nLatent space\nDimensionality reduction\nUpsampling\nDownsampling\nSynthetic data\nData leakage cuman kita make eberapa metode hal yang paling sering dipake dan use casenya\nuntuk memenuhi tujuan tersebut, beberapa tekniknya tuh\nFeature Selection(dijabarkan lagi dlm listt)",
         "tags": [],
         "line": 234,
-        "startOffset": 16353,
-        "endOffset": 16380,
+        "startOffset": 15166,
+        "endOffset": 15601,
         "filePath": "Data-AI-Handbook.md",
         "footnoteCount": 0,
         "footnoteContents": [],
-        "createdAt": 1763817613434,
+        "createdAt": 1763818935711,
         "isNativeComment": false,
         "type": "highlight"
       },
       {
-        "id": "muy3ewqre",
+        "id": "bhe1ogd1l",
+        "text": "perlu satu halaman lagi",
+        "tags": [],
+        "line": 353,
+        "startOffset": 23367,
+        "endOffset": 23394,
+        "filePath": "Data-AI-Handbook.md",
+        "footnoteCount": 0,
+        "footnoteContents": [],
+        "createdAt": 1763818918705,
+        "isNativeComment": false,
+        "type": "highlight"
+      },
+      {
+        "id": "3oc0q09ad",
         "text": "perlu quotes",
         "tags": [],
-        "line": 255,
-        "startOffset": 18289,
-        "endOffset": 18305,
+        "line": 374,
+        "startOffset": 25303,
+        "endOffset": 25319,
         "filePath": "Data-AI-Handbook.md",
         "footnoteCount": 0,
         "footnoteContents": [],
-        "createdAt": 1763817613370,
+        "createdAt": 1763818918641,
         "isNativeComment": false,
         "type": "highlight"
       },
       {
-        "id": "8adtal8v9",
+        "id": "juxpmppim",
+        "text": "\n[https://www.kaggle.com/discussions/general/171856](https://www.kaggle.com/discussions/general/171856)\n\n[https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning](https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning)\n",
+        "tags": [],
+        "line": 376,
+        "startOffset": 25321,
+        "endOffset": 25609,
+        "filePath": "Data-AI-Handbook.md",
+        "footnoteCount": 1,
+        "footnoteContents": [
+          "\n[https://www.kaggle.com/discussions/general/171856](https://www.kaggle.com/discussions/general/171856)\n\n[https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning](https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning)\n"
+        ],
+        "createdAt": 1763818173331,
+        "isNativeComment": true,
+        "type": "comment"
+      },
+      {
+        "id": "v0kiu8w3c",
         "text": "jenis-jenis ensemble dalam gambar",
         "tags": [],
-        "line": 265,
-        "startOffset": 19213,
-        "endOffset": 19250,
+        "line": 389,
+        "startOffset": 26516,
+        "endOffset": 26553,
         "filePath": "Data-AI-Handbook.md",
         "footnoteCount": 0,
         "footnoteContents": [],
-        "createdAt": 1763817613294,
+        "createdAt": 1763818918854,
         "isNativeComment": false,
         "type": "highlight"
+      },
+      {
+        "id": "dgsx7hq2p",
+        "text": "\n[https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)\n",
+        "tags": [],
+        "line": 391,
+        "startOffset": 26555,
+        "endOffset": 26651,
+        "filePath": "Data-AI-Handbook.md",
+        "footnoteCount": 1,
+        "footnoteContents": [
+          "\n[https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)\n"
+        ],
+        "createdAt": 1763818171464,
+        "isNativeComment": true,
+        "type": "comment"
       }
     ]
   },

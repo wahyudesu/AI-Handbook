@@ -94,11 +94,13 @@
               "title": "Bookmarks"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "4c17b3d11eb6b658",
@@ -176,23 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Welcome.md",
+                "file": "Data-AI-Handbook.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of Welcome"
-            }
-          },
-          {
-            "id": "97e28fbc09a24395",
-            "type": "leaf",
-            "state": {
-              "type": "annotations-outline",
-              "state": {},
-              "icon": "message-square",
-              "title": "Enhanced Annotations"
+              "title": "Outline of Data-AI-Handbook"
             }
           },
           {
@@ -216,7 +208,23 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 4
+      },
+      {
+        "id": "e8ca7bb746c7394a",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "97e28fbc09a24395",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
+              "icon": "message-square",
+              "title": "Enhanced Annotations"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
@@ -236,7 +244,7 @@
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "672e31c0ef516bca",
+  "active": "44a9e1dcffb4bbf2",
   "lastOpenFiles": [
     "notebook",
     "Untitled.base",

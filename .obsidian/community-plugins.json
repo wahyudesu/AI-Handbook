@@ -6,5 +6,7 @@
   "remotely-save",
   "personal-assistant",
   "obsidian-smart-typography",
-  "sidebar-highlights"
+  "sidebar-highlights",
+  "obsidian-pandoc",
+  "better-export-pdf"
 ]

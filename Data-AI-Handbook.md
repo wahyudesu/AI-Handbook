@@ -19,7 +19,6 @@ isi tiap bab: |-
   quotes: bisa berupa recommendation, question,
 ---
 ## Table of Contents
-- [[#Table of Contents|Table of Contents]]
 - [[#Pengantar|Pengantar]]
 - [[#Data and Digital Use case|Data and Digital Use case]]
 	- [[#Data and Digital Use case#Understanding Data in AI Contexts|Understanding Data in AI Contexts]]
@@ -27,6 +26,19 @@ isi tiap bab: |-
 	- [[#Data and Digital Use case#Where to Get Data|Where to Get Data]]
 - [[#Data Analysis and Preprocessing|Data Analysis and Preprocessing]]
 	- [[#Data Analysis and Preprocessing#Data Preprocessing|Data Preprocessing]]
+- [[#Model and Evaluation|Model and Evaluation]]
+	- [[#Model and Evaluation#Core Concepts of Machine Learning|Core Concepts of Machine Learning]]
+	- [[#Model and Evaluation#Types of Machine Learning|Types of Machine Learning]]
+	- [[#Model and Evaluation#Model Training and Validation data|Model Training and Validation data]]
+	- [[#Model and Evaluation#Hyperparameter tuning|Hyperparameter tuning]]
+	- [[#Model and Evaluation#Ensemble and Stacking|Ensemble and Stacking]]
+- [[#Great Books on Everything Data and Machine Learning|Great Books on Everything Data and Machine Learning]]
+	- [[#Great Books on Everything Data and Machine Learning#AI and Machine Learning|AI and Machine Learning]]
+	- [[#Great Books on Everything Data and Machine Learning#Kaggle and Interviews|Kaggle and Interviews]]
+	- [[#Great Books on Everything Data and Machine Learning#Statistics|Statistics]]
+	- [[#Great Books on Everything Data and Machine Learning#Data Engineering|Data Engineering]]
+	- [[#Great Books on Everything Data and Machine Learning#Productivity and Habits|Productivity and Habits]]
+
 ## Pengantar
 Materi tentang Data dan ML ini aku kurasi dari berbagai sumber dan pengalaman pribadi—mulai dari kuliah teknik sains data di kampus hingga pengalaman kerja—supaya kamu bisa langsung belajar hal-hal yang benar-benar penting, applicable, dan yang paling penting ber Bahasa Indonesia. Cocok untuk:
 
@@ -124,6 +136,113 @@ Use Case Prompt for Analysis Scenario
 - “Explain this complex metric in simple terms.”
 - “Draft an executive summary for my findings.”
 
+## EDA
+
+data cleaning dan processing itu part of penting
+
+“Exploratory data analysis refers to data analyses that are conducted to discover and explore unexpected patterns in the data, complementing confirmatory analyses and aiding in the formulation of new hypotheses.”
+
+– https://www.sciencedirect.com/topics/social-sciences/exploratory-data-analysis
+
+data mining
+
+lorem ipsum
+
+## Statistical Analysis
+
+Data cleaning dan processing itu penting, tetapi statistik tidak kalah esensial. Statistik merupakan metode matematika yang digunakan untuk memahami, menjelaskan, dan menjawab berbagai pertanyaan terkait data. Melalui statistik, data yang sudah diproses dapat dianalisis secara terukur sehingga menghasilkan insight yang valid dan dapat dipertanggungjawabkan
+
+Mengapa penting dalam ML?
+
+Dari exploratory data analysis hingga perancangan eksperimen untuk pengujian hipotesis, statistik berperan besar dalam pemecahan masalah di berbagai industri dan domain. Statistik membantu menjawab pertanyaan seperti:
+
+- Fitur apa yang paling penting?
+- Bagaimana kita merancang eksperimen untuk strategi pengembangan produk?
+- Metrik performa apa yang perlu diukur?
+- Hasil apa yang paling umum atau paling mungkin terjadi?
+- Bagaimana membedakan antara noise dan data yang benar-benar valid?
+
+
+> [!NOTE] 
+> Selain Python (pandas, numpy, statsmodels), kita juga bisa menggunakan R untuk analisis data. Beberapa library yang umum digunakan antara lain:
+>- dplyr untuk data manipulation
+>- ggplot2 untuk data visualization
+>- tidyr untuk data cleaning dan reshaping
+>- readr untuk data loading
+>- caret untuk modeling dan evaluasi
+
+## Descriptive Statistics
+
+Descriptive Statistics lorem ipsum lorem ipsum lorem ipsum
+
+masih statistical analysis
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+ini rumus statistik
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+## Inferential Statistics
+
+Descriptive Statistics lorem ipsum lorem ipsum lorem ipsum
+
+masih statistical analysis
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+ini rumus statistik
+
+lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+Dalam konteks proyek data dan AI, analisis statistik memberikan dasar pemahaman terhadap pola, tren, dan hubungan dalam data. Tahapan seperti deskriptif, inferensial, hingga pengujian hipotesis membantu memastikan keputusan berbasis data dilakukan secara objektif dan terukur. Dengan kata lain, statistik melengkapi proses data cleaning dan processing dengan memberikan makna yang dapat langsung dipakai untuk permodelan dan evaluasi.
+
+%%
+https://www.kaggle.com/code/shivanirana63/guide-to-complete-statistical-analysis#2.Inferential-Statistics
+https://pandas.pydata.org/docs/getting_started/intro_tutorials/06_calculate_statistics.html
+https://scipy-lectures.org/packages/statistics/
+https://www.statsmodels.org/stable/gettingstarted.html
+%%
+
+## Feature Engineering
+
+Feature engineering adalah bagian dari data preprocessing, tapi ini adalah part yang paling spesifik dan membutuhkan domain knowledge yang dalam. Berbeda dengan cleaning atau normalisasi yang bisa mengikuti standard procedure, feature engineering requires pemahaman tentang problem domain—kamu perlu tahu features mana yang benar-benar meaningful dan bagaimana cara mengekstrak signal dari noise.
+
+Dalam praktiknya, terutama ketika dealing dengan dataset besar (ratusan ribu hingga jutaan rows dengan puluhan atau ratusan features), approach feature engineering tidak bisa sembarangan. Salah handling bisa bikin model overfitting, underfitting, atau bahkan completely misleading. Misalnya, di financial data, feature `income_last_month` punya makna yang berbeda dengan `average_income_12months` keduanya dari raw data yang sama tapi impact-nya ke model sangat berbeda. Di healthcare data, combining age dan medical history sembarangan bisa introduce bias yang dangerous. Ini kenapa domain expertise jadi critical—kamu perlu tahu "why" di balik setiap feature yang kamu create atau select.
+
+Ada banyak teknik dalam feature engineering, dari feature selection hingga synthetic data generation. Di handbook ini, kita fokus ke teknik yang paling sering dipakai dan directly applicable.
+### Teknik-Teknik Utama:
+
+**1. Feature Selection** Memilih subset features yang paling relevan dari dataset. Tujuannya mengurangi noise, mempercepat training, dan improve model performance.
+
+Contoh sederhana:
+- Dari `height` dan `weight` → create `BMI = weight / (height²)`
+- Dari `purchase_date` dan `current_date` → create `days_since_purchase`
+- Dari `total_amount` dan `quantity` → create `average_price_per_item`
+
+**2. Feature Extraction** Membuat features baru dari kombinasi features yang sudah ada. Contohnya membuat feature "BMI" dari height dan weight.
+
+**3. Handling Imbalanced Data**
+
+- **Upsampling**: Menambah jumlah samples dari minority class
+- **Downsampling**: Mengurangi samples dari majority class
+- **Synthetic Data**: Generate data baru (seperti SMOTE) untuk balance dataset
+
+==feature engineering ini mirip mirip partnya kayak , kamu bisa eksplor banyak soal feature engineering, seperti Feature selection
+Feature extraction
+Vector embedding
+Latent space
+Dimensionality reduction
+Upsampling
+Downsampling
+Synthetic data
+Data leakage cuman kita make eberapa metode hal yang paling sering dipake dan use casenya
+untuk memenuhi tujuan tersebut, beberapa tekniknya tuh
+Feature Selection(dijabarkan lagi dlm listt)==
 ## Model and Evaluation
 
 ### Core Concepts of Machine Learning
@@ -255,6 +374,11 @@ Hyperparameter tuning adalah proses sistematis mencari nilai-nilai optimal untuk
 
 ==perlu quotes==
 
+%%
+[https://www.kaggle.com/discussions/general/171856](https://www.kaggle.com/discussions/general/171856)
+
+[https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning](https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning)
+%%
 ### Ensemble and Stacking
 
 Kalau kamu sering eksplor kompetisi Kaggle, kamu pasti notice bahwa top performers di leaderboard sering bukan pakai deep learning—mereka pakai ensemble methods. Teknik ini consistently menghasilkan akurasi tinggi dan sering jadi game changer dalam kompetisi.
@@ -265,9 +389,53 @@ Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (
 
 ==jenis-jenis ensemble dalam gambar==
 
+%%
+[https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)
+%%
+## Great Books on Everything Data and Machine Learning
 
-Great Books on Everything Data and Machine Learning
+### AI and Machine Learning
 
-lorem ipsum lorem ipsum
+[AI and Machine Learning for Coders](https://www.amazon.com/Machine-Learning-Coders-Programmers-Intelligence/dp/1492078190) → Good starter especially if you have strong programming background.
 
-<!--makan nasi-->
+[Designing Machine Learning Systems](https://www.amazon.com/Designing-Machine-Learning-Systems-Production-Ready/dp/1098107969) → Intermediate reads if you’re bored with the typical AI/ML book.
+
+[Hands-On Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.amazon.com/Hands-Machine-Learning-Scikit-Learn-TensorFlow/dp/1098125975) → Very great book covering a variety of different tools and popular libraries.
+
+[Data Science from Scratch](https://www.amazon.com/Data-Science-Scratch-Principles-Python/dp/149190142X) → This book focuses on the Data Science part, discussing DS approaches in addition to exploration of common algorithms used in the field.
+
+[Approaching Almost Any Machine Learning Problem](https://www.amazon.com/Approaching-Almost-Machine-Learning-Problem/dp/8269211508) → Very great book by Kaggle grandmaster Abhishek Thakur, discussing more in-depth and practical approach/techniques to every subset of problems.
+
+[Machine Learning Yearning](https://info.deeplearning.ai/machine-learning-yearning-book) → Very great book by Andrew Ng, covering bits of problems and its solutions, this book cover a great range of practical problems and focus more on problem solving in the field rather than modelling tutorials. Each topic is 1-2 page long which is great for a quick read.
+
+### Kaggle and Interviews
+
+[The Kaggle Book: Data analysis and machine learning for competitive data science](https://www.amazon.com/Data-Analysis-Machine-Learning-Kaggle/dp/1801817472) → The go to book if you want to focus on Kaggle competitions.
+
+[The Kaggle Workbook: Self-learning exercises and valuable insights for Kaggle data science competitions](https://www.amazon.com/Kaggle-Workbook-Self-learning-exercises-competitions/dp/1804611212) → Other part of the Kaggle book, great insights and exercises, this is currently on my reading queue as well.
+
+[Ace the Data Science Interview](https://www.amazon.com/Ace-Data-Science-Interview-Questions/dp/0578973839) → Great for interview preps, this is sort of cracking the coding interview thing but for Data Science.
+
+### Statistics
+
+[Introduction to Statistical Learning in Python/R](https://www.statlearning.com/) → Very great and packed book, their default version is in R, but they just released the python version.
+
+[The Data Detective](https://www.amazon.com/Data-Detective-Rules-Sense-Statistics/dp/0593084594) → Great intro and light reading, on my reading queue also.
+
+### Data Engineering
+
+[Building the Data Lakehouse](https://www.amazon.com/Building-Data-Lakehouse-Bill-Inmon/dp/1634629663) → A very great and novel concept in data engineering by the father of data warehousing, Bill Inmon.
+
+[Data Mesh](https://www.amazon.com/Data-Mesh-Delivering-Data-Driven-Value/dp/1492092398) → Also a new concept that I’m trying to learn, data platforms are evolving rapidly these days.
+
+[Building The Data Warehouse](https://www.amazon.com/Building-Data-Warehouse-W-Inmon/dp/0764599445) → If you are learning data warehouses in school, you probably know this book already, very basic concept of data engineering and data warehousing, also a very great starter if you want to pursue data engineering.
+
+### Productivity and Habits
+
+> I’m adding this category because what makes the field hard to study for me is that I find it hard to be consistent and focused. These book helped me grow with techniques and concepts which helped me overcome that obstacle.
+
+[Deep Work](https://www.amazon.com/Deep-Work-Focused-Success-Distracted/dp/1455586692) → One really great book that helped me more focused on my work and also Kaggle.
+
+[Building a Second Brain](https://www.amazon.com/Building-Second-Brain-Organize-Potential/dp/B09MGFGV3J/) → A book that kickstarted my note taking journey, this helps me take notes with purpose and help me remember and document a lot of hard concepts easier.
+
+[How to be a Productivity Ninja](https://www.amazon.com/How-Productivity-Ninja-Worry-Achieve/dp/1848316836) → Very great book on productivity, the book provides great tips and techniques which helped me a lot.
