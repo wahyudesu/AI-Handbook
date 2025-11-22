@@ -266,3 +266,8 @@ Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (
 ==jenis-jenis ensemble dalam gambar==
 
 
+Great Books on Everything Data and Machine Learning
+
+lorem ipsum lorem ipsum
+
+<!--makan nasi-->

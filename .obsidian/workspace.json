@@ -191,12 +191,22 @@
             "state": {
               "type": "annotations-outline",
               "state": {},
+              "icon": "message-square",
+              "title": "Enhanced Annotations"
+            }
+          },
+          {
+            "id": "2a6973c374bf0c90",
+            "type": "leaf",
+            "state": {
+              "type": "annotations-outline",
+              "state": {},
               "icon": "lucide-ghost",
               "title": "annotations-outline"
             }
           },
           {
-            "id": "2a6973c374bf0c90",
+            "id": "f5c3fff674574b53",
             "type": "leaf",
             "state": {
               "type": "annotations-outline",
@@ -206,12 +216,11 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -222,11 +231,15 @@
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
+      "personal-assistant:Obsidian Assistant": false,
+      "sidebar-highlights:Open highlights": false,
       "remotely-save:Remotely Save": false
     }
   },
-  "active": "2a6973c374bf0c90",
+  "active": "672e31c0ef516bca",
   "lastOpenFiles": [
+    "notebook",
+    "Untitled.base",
     "README.md",
     "data-preprocessing-cheatsheet.png",
     "Data-AI-Handbook.md"
