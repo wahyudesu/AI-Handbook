@@ -1,3 +1,4 @@
 {
-  "spellcheck": true
+  "spellcheck": false,
+  "promptDelete": false
 }

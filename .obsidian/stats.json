@@ -16,34 +16,34 @@
       "totalPages": 13.3
     },
     "2025-11-23": {
-      "words": 551,
-      "characters": 4019,
-      "sentences": 26,
-      "pages": 1.8000000000000007,
+      "words": 1177,
+      "characters": 8710,
+      "sentences": 47,
+      "pages": 3.8999999999999986,
       "files": 2,
       "footnotes": 0,
       "citations": 0,
-      "totalWords": 4604,
-      "totalCharacters": 35423,
-      "totalSentences": 179,
-      "totalFootnotes": 0,
-      "totalCitations": 0,
-      "totalPages": 15.3
+      "totalWords": 5230,
+      "totalCharacters": 40114,
+      "totalSentences": 200,
+      "totalFootnotes": 131657,
+      "totalCitations": 131657,
+      "totalPages": 17.4
     }
   },
   "modifiedFiles": {
     "Data-AI-Handbook.md": {
       "words": {
         "initial": 4052,
-        "current": 4603
+        "current": 5229
       },
       "characters": {
         "initial": 31390,
-        "current": 35409
+        "current": 40100
       },
       "sentences": {
         "initial": 152,
-        "current": 178
+        "current": 199
       },
       "footnotes": {
         "initial": 0,
@@ -55,7 +55,7 @@
       },
       "pages": {
         "initial": 13.5,
-        "current": 15.3
+        "current": 17.4
       }
     }
   }

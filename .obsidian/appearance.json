@@ -1,5 +1,6 @@
 {
   "cssTheme": "Catppuccin",
   "interfaceFontFamily": "",
-  "textFontFamily": "Inter"
+  "textFontFamily": "Inter",
+  "baseFontSize": 14
 }

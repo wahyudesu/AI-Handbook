@@ -48,7 +48,11 @@ unique value: buku pedoman compact, tanpa bertele tele
 	- [[#Great Books on Everything Data and Machine Learning#Productivity and Habits|Productivity and Habits]]
 
 ## Pengantar
-Materi tentang Data dan ML ini aku kurasi dari berbagai sumber dan pengalaman pribadi—mulai dari kuliah teknik sains data di kampus hingga pengalaman kerja—supaya kamu bisa langsung belajar hal-hal yang benar-benar penting, applicable, dan yang paling penting ber Bahasa Indonesia. Cocok untuk:
+==latar belakang dibuatnya buku ini buat apa==
+
+Materi tentang Data dan ML ini aku kurasi dari berbagai sumber dan pengalaman pribadi—mulai dari kuliah teknik sains data di kampus hingga pengalaman kerja—supaya kamu bisa langsung belajar hal-hal yang benar-benar penting, applicable, dan yang paling penting ber Bahasa Indonesia. 
+
+Cocok untuk:
 
 - Memulai proyek ML pertama
 - Persiapan lomba AI/data science
@@ -88,8 +92,6 @@ If the data is already, How AI Leverages data to learn, adapt, and deliver the b
 - Training AI Models: Untuk membangun model AI yang efektif, data digunakan sebagai bahan pelatihan. Contohnya pada NLP, model dilatih menggunakan kumpulan besar data teks agar mampu memahami tata bahasa, makna kata, hingga analisis sentimen.
 - Data-Driven Decision Making: Data yang berkualitas memungkinkan sistem AI membuat keputusan secara akurat dan real-time. Sebagai contoh, mobil otonom memanfaatkan data dari berbagai sensor untuk mengenali lingkungan dan menavigasi jalan dengan aman. Contoh lainnya, market analysis bot menggunakan data transaksi, tren harga, dan sentimen pasar untuk memberikan rekomendasi investasi.
 - Personalization and Recommendations - Algoritma AI menggunakan data perilaku dan preferensi pengguna untuk menghasilkan pengalaman yang lebih personal. Contohnya Algoritma konten di Tiktok.
-%% %%
-lorem ipsum lorem ipsum lorem ipsum
 
 Dalam dunia AI, data adalah bahan baku utama yang memberi “pengetahuan” bagi mesin untuk belajar dan membuat keputusan.
 
@@ -137,17 +139,38 @@ Pada tahap ini, data mentah diolah menjadi bentuk yang lebih bersih, konsisten, 
 
 Proses preprocessing mencakup berbagai aktivitas seperti penanganan missing values, deteksi outlier, normalisasi data, encoding kategorikal, hingga feature engineering. Setiap dataset memiliki karakteristik unik, sehingga teknik yang diterapkan perlu disesuaikan dengan konteks dan tujuan analisis spesifik.
 
-Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum Lorem ipsum lorem ipsum
+==kode python sederhana tentang data preprocessing==
 
-Use Case Prompt for Analysis Scenario
+Pada data yang kosong, terdapat cara sederhana yaitu mengisi dengan rata-rata (mean), median, atau nilai yang sering muncul (mode). Namun pada praktiknya, data yang hilang belum tentu cocok diisi dengan nilai statistik sederhana—tergantung pola dan konteks datanya.
 
-- “Summarize this dataset for me. What trends or anomalies do you see?”
-- “Review this analysis. Are there any missing considerations or biases?”
-- “Create visualization ideas for this dataset.”
-- “Suggest SQL queries for this scenario.”
-- “Explain this complex metric in simple terms.”
-- “Draft an executive summary for my findings.”
+```python
+from sklearn.impute import SimpleImputer, IterativeImputer
 
+# Descriptive statistic
+SimpleImputer(strategy='mean')           # rata-rata
+SimpleImputer(strategy='median')         # median (robust untuk outlier)
+SimpleImputer(strategy='most_frequent')  # mode (untuk kategorikal)
+
+# Interpolation - estimasi berdasarkan trend data
+df['column_2'].interpolate(method='linear')              
+df['column_2'].interpolate(method='polynomial', order=2)
+
+# Iterative Imputation - prediksi dari fitur lain (paling akurat)
+IterativeImputer(max_iter=10).fit_transform(df)
+```
+
+
+==info ttg teknik teknik outlier handling, baca selengkapnya ==
+
+> [!NOTE] Use Case Prompt for Analysis Scenario
+> - “Summarize this dataset for me. What trends or anomalies do you see?”
+> - “Review this analysis. Are there any missing considerations or biases?”
+> - “Create visualization ideas for this dataset.”
+> - “Suggest SQL queries for this scenario.”
+> - “Explain this complex metric in simple terms.”
+> - “Draft an executive summary for my findings.”
+
+==tambahkan info ttg data mining di bagian ini, karena aku rasa data mining itu berhubungan dgn data preprocessing ini==
 ### EDA
 
 data cleaning dan processing itu part of penting
@@ -187,7 +210,7 @@ Dari exploratory data analysis hingga perancangan eksperimen untuk pengujian hip
 
 #### Descriptive Statistics
 
-Offers methods to summarise data by transforming raw observations into meaningful information that is easy to interpret and share in the form of numbers graph, bar plots, histogram, pie chart, etc. Descriptive statistics is simply a process to describe our existing data.¶
+Metode dalam statistika untuk digunakan untuk memahami data secara langsung, dengan meringkasnya melalui ukuran-ukuran seperti rata-rata, median, modus, standar deviasi, dan rentang. Cocok sebagai langkah awal eksplorasi sebelum dilakukan analisis lebih mendalam.
 
 ```python
 # library python yang sering digunakan pada statistical analysis
@@ -202,7 +225,7 @@ import seaborn as sns
 
 Library-library di atas adalah toolkit standar untuk analisis statistik di Python. NumPy dan Pandas untuk manipulasi data dan komputasi numerik, statistics dan scipy.stats untuk fungsi statistik, sementara matplotlib dan seaborn untuk visualisasi hasil analisis.
 
-**Measure of Central Tendancy**
+##### Measure of Central Tendancy
 
 Ketika kamu punya dataset dengan ratusan baris, kamu butuh satu nilai yang merepresentasikan keseluruhan data—seperti "berapa harga rumah tipikal?" atau "gaji rata-rata karyawan berapa?". Measure of central tendency memberikan nilai "pusat" ini: mean (rata-rata), median (nilai tengah), dan mode (nilai paling sering muncul). Berguna untuk quick summary, membandingkan grup data, atau sebagai baseline untuk deteksi outlier.
 
@@ -211,7 +234,7 @@ numeric_data = df.select_dtypes(exclude='object')
 categorical_data = df.select_dtypes(include='object')
 ```
 
-Kode di atas memisahkan kolom numerik dan kategorikal dari dataframe. Pemisahan ini penting karena operasi statistik seperti mean atau variance hanya bisa diterapkan pada data numerik, sementara data kategorikal memerlukan treatment yang berbeda.
+Kode di atas memisahkan kolom numerik dan kategorikal dari dataframe. Ini langkah umum dalam analisis data, karena operasi statistik seperti mean atau variance hanya bisa diterapkan pada data numerik, sementara data kategorikal memerlukan treatment yang berbeda.
 
 ```python
 # Mean of all the columns in dataframe
@@ -220,9 +243,11 @@ df.mean()
 # Mean of individual column of dataframe
 df['column_1'].mean()
 
+# - The Geometric Mean (GM) is the average value or mean which signifies the central tendency of the set of numbers by finding the product of their values.
 from scipy.stats import gmean
 gmean(df['column_1'])
 
+# - The Harmonic Mean (HM) is defined as the reciprocal of the average of the reciprocals of the data values
 statistics.harmonic_mean(df['column_1'])
 ```
 
@@ -231,22 +256,31 @@ statistics.harmonic_mean(df['column_1'])
 - **Geometric mean** (`gmean()`): Lebih cocok untuk data yang bersifat multiplikatif atau rasio, seperti growth rate atau return on investment.
 - **Harmonic mean** (`harmonic_mean()`): Berguna untuk rata-rata dari rasio atau rate, misalnya kecepatan rata-rata.
 
+pengukuran lainnya, seperti nilai yang sering muncul dan nilai tengah juga sering digunakan
+
 ```python
 df['column_1'].describe()  # Memberikan count, mean, std, min, Q1, median, Q3, max
 
 df.mode() # Nilai yang sering muncul
 
 statistics.median(df['column_1']) # Nilai tengah
-```
-pengukuran lainnya, seperti mode nilai yang sering muncul dan nilai tengah sering digunakan
 
-**Measure of Variability/Dispersion**
+from scipy.stats import trim_mean
+trim_mean(df['column_1'], 0.1)  # Membuang 10% data outlier
+
+df['column_1'].quantile(0.25)  # Q1 (kuartil pertama)
+df['column_1'].quantile(0.50)  # Q2 (sama dengan median)
+df['column_1'].quantile(0.75)  # Q3 (kuartil ketiga)
+```
+
+##### Measure of Variability/Dispersion
 
 Selain mengetahui nilai pusat data, kita juga perlu memahami seberapa tersebar datanya. Measure of variability memberikan informasi tentang bagaimana data bervariasi atau tersebar di sekitar nilai tengahnya. Semakin besar variabilitas, semakin beragam nilai-nilai dalam dataset.
 
 ```python
 # Variance - mengukur seberapa jauh data tersebar dari mean
 df['column_1'].var()
+statisics.variance(df['column_1'])
 
 # Standard Deviation - akar dari variance, lebih mudah diinterpretasi
 df['column_1'].std()
@@ -262,16 +296,38 @@ IQR = Q3 - Q1
 
 **Variance** mengukur seberapa jauh nilai-nilai individual dalam dataset dari mean-nya. Variance yang tinggi menunjukkan data sangat bervariasi dan tersebar luas, sedangkan variance rendah menandakan data cenderung berkumpul dekat dengan mean.
 
+The variance is often used to quantify spread or dispersion. Spread is a characteristic of a sample or population that describes how much variability there is in it.
+
 **Standard Deviation** adalah akar kuadrat dari variance. Karena satuannya sama dengan data asli, standard deviation lebih mudah diinterpretasikan dibanding variance. Misalnya, jika data kita dalam satuan meter, standard deviation juga dalam meter.
+“Dispersement” tells you how much your data is spread out.
+Specifically, it shows you how much your data is spread out around the mean or average
+
+> [!NOTE] Perbedaan Varians dan Standard Deviasi 
+> Variance is a method to find or obtain the measure between the variables that how are they different from one another, whereas standard deviation shows us how the data set or the variables differ from the mean or the average value from the data set.
+> 
+> Variance helps to find the distribution of data in a population from a mean, and standard deviation also helps to know the distribution of data in population, but standard deviation gives more clarity about the deviation of data from a mean.
+
+2 hal itu penting pada penerapan data, adapun perhitungan lainnya
 
 **Range** memberikan gambaran kasar tentang spread dengan melihat selisih nilai terbesar dan terkecil. Namun, range sangat sensitif terhadap outlier.
 
 **IQR (Interquartile Range)** lebih robust terhadap outlier karena hanya melihat 50% data di tengah (antara kuartil pertama dan ketiga). IQR sering digunakan untuk deteksi outlier dengan aturan: nilai yang berada di luar `Q1 - 1.5*IQR` atau `Q3 + 1.5*IQR` dianggap sebagai outlier potensial.
 
+**Kurtosis** mengukur seberapa “runcing” atau “datar” distribusi data dibanding distribusi normal. Nilai kurtosis tinggi menunjukkan banyak outlier (heavy tails), sedangkan kurtosis rendah berarti distribusi lebih datar dan ringan.
+
+##### Shape of Data
+
 ![[Pasted image 20251123011214.png]]
 #### Inferential Statistics
 
-Descriptive Statistics lorem ipsum lorem ipsum lorem ipsum
+Inferential Statistics - offers methods to study experiments done on small samples of data and chalk out the inferences to the entire population (entire domain).
+
+![[Pasted image 20251123102030.png]]
+###  Population Vs Samples:[¶](https://www.kaggle.com/code/shivanirana63/guide-to-complete-statistical-analysis#2.1-Population-Vs-Samples:)
+
+- In statistics, the **population is a set of all elements or items that you’re interested in**. Populations are often vast, which makes them inappropriate for collecting and analyzing data. That’s why statisticians usually try to make some conclusions about a population by choosing and examining a representative subset of that population.
+    
+- This **subset of a population is called a sample**. Ideally, the sample should preserve the essential statistical features of the population to a satisfactory extent. That way, you’ll be able to use the sample to glean conclusions about the population.
 
 masih statistical analysis
 
@@ -282,6 +338,8 @@ lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ip
 ini rumus statistik
 
 lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+
+==kasi tips/trik library untuk mempermudah analisa statistik ==
 
 Dalam konteks proyek data dan AI, analisis statistik memberikan dasar pemahaman terhadap pola, tren, dan hubungan dalam data. Tahapan seperti deskriptif, inferensial, hingga pengujian hipotesis membantu memastikan keputusan berbasis data dilakukan secara objektif dan terukur. Dengan kata lain, statistik melengkapi proses data cleaning dan processing dengan memberikan makna yang dapat langsung dipakai untuk permodelan dan evaluasi.
 
@@ -335,7 +393,7 @@ Machine learning (ML) adalah bagian dari artificial intelligence (AI) yang memun
 
 Dalam praktiknya, proses training ML melibatkan tiga komponen utama: data, model, dan algoritma. Data digunakan sebagai bahan untuk melatih model agar mampu mengenali pola, sedangkan algoritma bertugas mengoptimalkan parameter model berdasarkan umpan balik dari hasil prediksi. Semakin banyak dan berkualitas data yang digunakan, semakin baik model dalam melakukan generalisasi terhadap data baru.
 
-proses modelling cenderung singkat/cepat, dibandingkan dengan pemrosesan data, proses modelling makin cepat, karena tinggal memanggil library bla bla bla, adapun untuk kasus kasus tertentu seperti data yang besar atau data komputasi yang kompleks bisa nggunain deep learning/neural network
+Pada praktiknya, proses modelling cenderung singkat (tidak termasuk running model fitting) jika dibandingkan dengan pemrosesan data. Proses modelling makin cepat karena tinggal memanggil library yang sudah tersedia seperti scikit-learn atau TensorFlow. Adapun untuk kasus tertentu seperti data yang besar atau komputasi yang kompleks bisa menggunakan deep learning/neural network, namun tetap menyesuaikan tujuan dari project dan resource yang tersedia
 
 ```python
 import numpy as np
@@ -370,7 +428,6 @@ print(prediksi) # Output: sekitar 240000
 
 ### Types of Machine Learning
 
-
 Ada tiga jenis penerapan model ML berdasarkan jenis data:
 - Supervised Learning: Belajar dari data berlabel untuk prediksi. Cocok untuk CV (klasifikasi gambar) dan NLP (analisis sentimen teks). Contoh: Model memprediksi penyakit dari data medis berlabel.
 - Unsupervised Learning: Menemukan pola tanpa label, seperti mengelompokkan data gambar di CV atau topik teks di NLP. Contoh: Mengelompokkan pelanggan berdasarkan perilaku belanja.
@@ -385,6 +442,37 @@ Scikit-learn adalah library Python open source yang banyak digunakan dalam penge
 >💡 Coba https://github.com/andre1araujo/Supervised-and-Unsupervised-Learning-Examples/. Kode ini ngejelasin lebih dalam implementasi ML unsupervised dan supervised sapa tahu mau dibaca lebih lanjut
 
 Sering kali, bagian tersulit dalam menyelesaikan masalah machine learning adalah menentukan algoritma atau estimator yang paling tepat untuk digunakan. Setiap estimator memiliki keunggulan dan keterbatasan tergantung pada jenis data serta tujuan analisis.
+
+```mermaid
+flowchart TD
+    A[MACHINE LEARNING]
+
+    A --> B[Supervised Learning]
+    A --> C[Unsupervised Learning]
+
+    B --> B1[Classification & Regression]
+    B1 --> B1A[
+      • K-Nearest Neighbors
+      • Decision Trees / Regression Trees
+      • Logistic Regression
+      • Naive Bayes
+      • Linear Regression
+      • Neural Networks
+      • Random Forest
+      • Ensembles
+      • Discriminant Analysis
+    ]
+
+    C --> C1[Unsupervised Methods]
+    C1 --> C1A[
+      • Clustering
+      • Association
+    ]
+
+```
+
+>Pada Data Science Reinforcement Learning jarang disinggung karena masalah yang sering ditemui sudah cukup diselesaikan dengan supervised/unsupervised, RL membutuhkan lingkungan simulasi untuk belajar dari percobaan berulang, dan lebih banyak digunakan pada robotika serta pengembangan game.
+
 
 | Library                   | Primary Use                         | Key Features                               | Best For                                  |
 | ------------------------- | ----------------------------------- | ------------------------------------------ | ----------------------------------------- |
@@ -473,8 +561,11 @@ Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (
 
 ==jenis-jenis ensemble dalam gambar==
 
+==
+
 %%
 [https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)
+https://www.kaggle.com/code/anuragbantu/stacking-ensemble-learning-beginner-s-guide 
 %%
 ## Great Books on Everything Data and Machine Learning
 
