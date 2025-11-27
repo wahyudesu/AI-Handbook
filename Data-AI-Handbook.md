@@ -13,7 +13,7 @@ tags:
   - AI
   - Mahasiswa
 version: "0.9"
-progress: 75
+progress: 60
 isi tiap bab: |-
   paragraf: penjelasan, penjabaran teori
   bullet list : resources, checklist
@@ -68,6 +68,7 @@ gambar perbedaan AI/ML/DS sebagai dasar
 
 ---
 ## Data and Digital Use case
+^[Jadi ini tuh bakal bahas apa itu data, format, jenis dan bentuknya serta fundamentalnya dalam konteks AI, bagaimana cara mengolah dan menggunakanya (digunakan untuk apa dan mengapa)]
 ### Understanding Data in AI Contexts
 
 Dalam dunia AI, data adalah bahan baku utama yang memberi “pengetahuan” bagi mesin untuk belajar dan membuat keputusan.
@@ -116,6 +117,7 @@ API-Based Sources: Real-time data pulls.
 - Twitter API for sentiment analysis data; OpenWeatherMap for climate data.
 - Custom Sources: Collect your own via surveys, sensors, or web scraping (ethically and legally).
 
+==final penutup dari data ini perlu diperbaiki, supaya catatan ini relevan==
 Checklist for Data
 
 □ Define your project's data needs (e.g., volume, type).
@@ -323,7 +325,8 @@ Specifically, it shows you how much your data is spread out around the mean or a
 Inferential Statistics - offers methods to study experiments done on small samples of data and chalk out the inferences to the entire population (entire domain).
 
 ![[Pasted image 20251123102030.png]]
-###  Population Vs Samples:[¶](https://www.kaggle.com/code/shivanirana63/guide-to-complete-statistical-analysis#2.1-Population-Vs-Samples:)
+
+**Population Vs Samples**:
 
 - In statistics, the **population is a set of all elements or items that you’re interested in**. Populations are often vast, which makes them inappropriate for collecting and analyzing data. That’s why statisticians usually try to make some conclusions about a population by choosing and examining a representative subset of that population.
     
@@ -350,14 +353,13 @@ https://scipy-lectures.org/packages/statistics/
 https://www.statsmodels.org/stable/gettingstarted.html
 %%
 
-## Feature Engineering
+### Feature Engineering
 
 Feature engineering adalah bagian dari data preprocessing, tapi ini adalah part yang paling spesifik dan membutuhkan domain knowledge yang dalam. Berbeda dengan cleaning atau normalisasi yang bisa mengikuti standard procedure, feature engineering requires pemahaman tentang problem domain—kamu perlu tahu features mana yang benar-benar meaningful dan bagaimana cara mengekstrak signal dari noise.
 
 Dalam praktiknya, terutama ketika dealing dengan dataset besar (ratusan ribu hingga jutaan rows dengan puluhan atau ratusan features), approach feature engineering tidak bisa sembarangan. Salah handling bisa bikin model overfitting, underfitting, atau bahkan completely misleading. Misalnya, di financial data, feature `income_last_month` punya makna yang berbeda dengan `average_income_12months` keduanya dari raw data yang sama tapi impact-nya ke model sangat berbeda. Di healthcare data, combining age dan medical history sembarangan bisa introduce bias yang dangerous. Ini kenapa domain expertise jadi critical—kamu perlu tahu "why" di balik setiap feature yang kamu create atau select.
 
 Ada banyak teknik dalam feature engineering, dari feature selection hingga synthetic data generation. Di handbook ini, kita fokus ke teknik yang paling sering dipakai dan directly applicable.
-### Teknik-Teknik Utama:
 
 **1. Feature Selection** Memilih subset features yang paling relevan dari dataset. Tujuannya mengurangi noise, mempercepat training, dan improve model performance.
 
@@ -492,7 +494,8 @@ Pada penerapannya itu tergantung masalah nyata—jangan pakai yang berat jika se
 - Gunakan Deep Learning untuk gambar, audio, atau video: butuh GPU dan data besar, tapi akurasi tinggi. Cocok untuk computer vision, speech recognition, medical imaging. Contoh: [YOLO Object Detection](https://github.com/ultralytics/yolov5) | [Face Recognition](https://github.com/ageitgey/face_recognition)
 - Gunakan LLM & NLP untuk teks seperti chatbot atau summarization: mulai pre-trained, fine-tune secukupnya. Cocok untuk customer support, document QA, content generation. Contoh: [ChatBot LangChain](https://github.com/hwchase17/chat-your-data) | [Document QA](https://github.com/deepset-ai/haystack)
 
-### Model Training and Validation data
+### Model Training and Evaluation data
+^[(left)  nyinggung dikit library tdi, code snippest python buat model training (right) gambar beserta penjelasan training, validastion, dan test,3 pertanyaan ttg data ini,aset gambar, (right) implementasi kode dan penjelasan, split model sebelum training, teori pemisahan data (dalam bentuk gambar)]
 
 Terima kasih kepada Python dan library seperti scikit-learn, sekarang nerapin model ML tinggal beberapa baris kode. Fokus kita lebih ke penyesuaian parameter yang tepat untuk model dan memahami bagaimana data dibagi dengan benar. Pemilihan parameter dan strategi validation inilah yang menentukan apakah model kita benar-benar reliable atau hanya bagus di data training.
 
@@ -535,6 +538,7 @@ Pemilihan strategi validation bergantung pada tiga hal: ukuran dataset, tipe pro
 | LOOCV                   | Small datasets, high precision  | Maximum data use       | Very slow, overkill for large sets |
 
 ### Hyperparameter tuning
+^[metode hyper parameter dalam bentuk list, serta contoh plot plot nya, harus ada kode sih disini, tips library utk auto dari model hingga parameternya]
 
 Dalam pengembangan model machine learning, terdapat dua jenis parameter yang perlu dipahami dengan baik:
 
@@ -548,10 +552,10 @@ Hyperparameter tuning adalah proses sistematis mencari nilai-nilai optimal untuk
 
 %%
 [https://www.kaggle.com/discussions/general/171856](https://www.kaggle.com/discussions/general/171856)
-
 [https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning](https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning)
 %%
-### Ensemble and Stacking
+### Ensemble Learning
+^[]
 
 Kalau kamu sering eksplor kompetisi Kaggle, kamu pasti notice bahwa top performers di leaderboard sering bukan pakai deep learning—mereka pakai ensemble methods. Teknik ini consistently menghasilkan akurasi tinggi dan sering jadi game changer dalam kompetisi.
 
@@ -561,11 +565,33 @@ Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (
 
 ==jenis-jenis ensemble dalam gambar==
 
-==
+**Algorithm overview**
+
+| Name                           | Representation                   | Loss function           | Optimization        | Regularization          |
+| ------------------------------ | -------------------------------- | ----------------------- | ------------------- | ----------------------- |
+| Classification trees           | Decision tree                    | Entropy / Gini index    | Hunt’s algorithm    | Tree depth,…            |
+| Regression trees               | Decision tree                    | Square loss             | Hunt’s algorithm    | Tree depth,…            |
+| RandomForest                   | Ensemble of randomized trees     | Entropy / Gini / Square | (Bagging)           | Number/depth of trees,… |
+| AdaBoost                       | Ensemble of stumps               | Exponential loss        | Greedy search       | Number/depth of trees,… |
+| GradientBoostingRegression     | Ensemble of regression trees     | Square loss             | Gradient descent    | Number/depth of trees,… |
+| GradientBoostingClassification | Ensemble of regression trees     | Log loss                | Gradient descent    | Number/depth of trees,… |
+| XGBoost, LightGBM, CatBoost    | Ensemble of XGBoost trees        | Square/log loss         | 2nd order gradients | Number/depth of trees,… |
+| Stacking                       | Ensemble of heterogeneous models | /                       | /                   | Number of models,…      |
+
+**Other ensembling techniques**
+
+- Hyper-ensembles: same basic model but with different hyperparameter settings
+- Can combine overfitted and underfitted models
+- Deep ensembles: ensembles of deep learning models
+- Bayes optimal classifier: ensemble of all possible models (largely theoretic)
+- Bayesian model averaging: weighted average of probabilistic models, weighted by their posterior probabilities
+- Cross-validation selection: does internal cross-validation to select best of $M$ models
+- Any combination of different ensembling techniques
 
 %%
 [https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)
-https://www.kaggle.com/code/anuragbantu/stacking-ensemble-learning-beginner-s-guide 
+https://www.kaggle.com/code/anuragbantu/stacking-ensemble-learning-beginner-s-guide
+https://ml-course.github.io/master/notebooks/04%20-%20Ensemble%20Learning.html
 %%
 ## Great Books on Everything Data and Machine Learning
 
