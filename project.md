@@ -22,3 +22,8 @@
 jenis-jenis lalu penjabarannya
 - ensemble: ringkasan 
 - penutup: rekomendasi buku yang bisa dibaca
+
+step selanjutnya
+- [ ] pengumpulan kritik dan saran
+- [ ] pengembangan bab 4 dan 5
+- [ ] 

@@ -79,8 +79,8 @@ gambar perbedaan AI/ML/DS sebagai dasar
 
 Python jadi pilihan utama di AI karena syntaxnya paling mudah dipelajari dan struktur-nya mendekati bahasa manusia—jadi kamu bisa langsung fokus ke problem solving tanpa tersangkut detail teknis. Kemudahan ini bikin prototyping berjalan cepat, dan speed itu penting banget dalam AI development yang sifatnya iteratif dan butuh banyak trial-and-error.
 
-Terus, ekosistem Python untuk AI itu beneran lengkap. PyTorch dan TensorFlow dipakai untuk bangun neural networks, scikit-learn jadi standar untuk machine learning klasik seperti regression, classification, clustering, sementara NumPy dan Pandas menangani data processing sebelum training. Semua library ini matang, stabil, dan saling terintegrasi dengan baik. Kombinasi ekosistem yang comprehensive, komunitas besar yang terus update dengan teknologi terbaru, plus backing dari perusahaan tech global, membuat Python tetap jadi bahasa yang biasanya jadi first choice di riset dan development AI.
-==paragraf kedua, kalimat muulai dari semua library itu kureng dan perlu diganti==
+Terus, ekosistem Python untuk AI itu beneran lengkap. PyTorch dan TensorFlow dipakai untuk bangun neural networks, scikit-learn jadi standar untuk machine learning klasik seperti regression, classification, clustering, sementara NumPy dan Pandas menangani data processing sebelum training. Koleksi library yang terus berkembang dan saling terintegrasi inilah yang membuat Python tetap jadi first choice di riset dan development AI.
+
 ## Data and Digital Use case
 ^[Jadi ini tuh bakal bahasa apa itu data, format, jenis dan bentuknya serta fundamentalnya dalam konteks AI, bagaimana cara mengolah dan menggunakanya (digunakan untuk apa dan mengapa)]
 ### Understanding Data in AI Contexts
@@ -106,8 +106,6 @@ If the data is already, How AI Leverages data to learn, adapt, and deliver the b
 - **Training AI Models**: Untuk membangun model AI yang efektif, data digunakan sebagai bahan pelatihan. Contohnya pada NLP, model dilatih menggunakan kumpulan besar data teks agar mampu memahami tata bahasa, makna kata, hingga analisis sentimen.
 - **Data-Driven Decision Making**: Data yang berkualitas memungkinkan sistem AI membuat keputusan secara akurat dan real-time. Sebagai contoh, mobil otonom memanfaatkan data dari berbagai sensor untuk mengenali lingkungan dan menavigasi jalan dengan aman. Contoh lainnya, market analysis bot menggunakan data transaksi, tren harga, dan sentimen pasar untuk memberikan rekomendasi investasi.
 - **Personalization and Recommendations** - Algoritma AI menggunakan data perilaku dan preferensi pengguna untuk menghasilkan pengalaman yang lebih personal. Contohnya Algoritma konten di Tiktok.
-
-==perlu callout satu ==
 
 ### Where to Get Data
 
@@ -156,14 +154,14 @@ Proses preprocessing mencakup berbagai aktivitas seperti penanganan missing valu
 
 **Bagaimana jika data punyaku ga lengkap?** (Missing Value Handling)
 
-Seringkali data yang kita dapatkan memiliki beberapa atau banyak nilai kosong, dan ini tidak boleh dibiarkan karena dapat memengaruhi performa model, terutama model yang sensitif terhadap distribusi data seperti regresi, tree-based model tanpa imputation yang tepat, maupun algoritma jarak seperti KNN. Nilai kosong dapat membuat prediksi menjadi bias atau tidak stabil jika tidak ditangani.
+Seringkali data yang kita dapatkan memiliki beberapa atau banyak nilai kosong, dan ini tidak boleh dibiarkan karena dapat memengaruhi performa model, terutama model yang sensitif terhadap distribusi data seperti regresi, tree-based model tanpa imputation yang tepat, maupun algoritma jarak seperti KNN. Nilai kosong dapat membuat prediksi model menjadi bias atau tidak stabil jika tidak ditangani.
 
 Beberapa alasan umum mengapa data bisa kosong:
 
-- Pengguna lupa mengisi suatu field.
+- Lupa mengisi suatu baris data.
 - Data hilang saat proses migrasi atau transfer.
 - Kesalahan pemrograman.
-- Pengguna memilih tidak mengisi data tertentu karena alasan privasi atau persepsi terhadap penggunaan data.
+- User memilih tidak mengisi data tertentu karena alasan privasi atau hal lain.
 
 Dalam praktiknya, nilai kosong dapat ditangani dengan dua pendekatan utama: menghapus data atau mengisinya kembali. Jika jumlah nilai kosong tidak terlalu besar, baris atau kolom yang hilang bisa dihapus tanpa menambah bias berarti. Namun jika datanya penting, nilai kosong dapat diisi menggunakan mean, median, atau mode—sesuai tipe datanya. Pendekatan ini cocok dengan implementasi Python di bawah, yang biasanya menggunakan `dropna()` untuk menghapus data dan `fillna()` atau `SimpleImputer` untuk melakukan imputasi.
 
@@ -183,7 +181,7 @@ df['column_2'].interpolate(method='polynomial', order=2)
 IterativeImputer(max_iter=10).fit_transform(df)
 ```
 
-Namun pada praktiknya, data yang hilang belum tentu cocok diisi dengan nilai statistik sederhana—tergantung pola dan konteks datanya.
+Namun pada praktiknya, data yang hilang belum tentu cocok diisi dengan nilai statistik sederhana, tergantung pola dan konteks datanya.
 
 **Fitur data milikku tidak seimbang? (Imbalance Dataset)**
 Pada data klasifikasi yang jumlah kelasnya timpang, model cenderung bias terhadap kelas mayoritas. Cara umum mengatasinya yaitu oversampling, undersampling, atau membuat bobot kelas saat training.
@@ -206,9 +204,12 @@ model = LogisticRegression(class_weight='balanced')
 ```
 
 **Pada data yang kumiliki ada bbrapa point yang terlalu berbeda… (Outlier Handling)**
-Outlier bisa memengaruhi model, terutama model yang sensitif terhadap nilai ekstrem. Cara umum yaitu trimming, winsorizing, censoringdan transformasi.
+Outlier bisa memengaruhi model, terutama model yang sensitif terhadap nilai ekstrem. 
 
-**Detecting Outliers**
+==ngasih teori ttg outlier==
+
+
+Cara umum yaitu trimming, winsorizing, censoring, dan transformasi.
 
 There are several techniques to detect the outliers. In which most important and generally used technique to detect outliers is
 
@@ -234,7 +235,6 @@ df = df[~((df['Age']<lower) & (df['Age']>upper))]
 #df
 ```
 
-
 Other ways to handle outliers:
 
 1. **_Remove the outliers:_** Before deleting the entries having outliers, make sure the they aren’t adding any significant information and also that the dataset is not too small as deleting rows from datasets with a smaller number of records would mean losing vital information.
@@ -245,6 +245,13 @@ Other ways to handle outliers:
 ==tambahkan callout untuk detail handling outlier==
 
 ==sek, effort nih nyajiin cara outlier handling==
+
+Lebih jauh tentang outliers
+
+Outlier can be of two types:
+1) Univariate
+2) Multivariate.
+Univariate outliers can be found when we look at distribution of a single variable. Multi-variate outliers are outliers in an n-dimensional space. In order to find them, you have to look at distributions in multi-dimensions.
 
 
 **Terdapat bbrp data yang sama (Duplikasi data )**
@@ -279,6 +286,8 @@ df['height_m'] = df['height'].str.replace('cm','').astype(float) / 100
 **Bagaimana cara kalkulasi data kategorikal? (Encoding)**
 Komputer tidak bisa memproses [data kategorikal](https://developers.google.com/machine-learning/crash-course/categorical-data). Oleh karena itu harus dirubah menjadi angka sebelum masuk model. Ada beberapa metode tergantung data dan kebutuhan handling model.
 
+
+
 ```python
 from sklearn.preprocessing import OneHotEncoder, LabelEncoder
 import pandas as pd
@@ -308,8 +317,7 @@ df['category_te'] = df['category'].map(means)
 #      A         0          0.45
 ```
 
-Tiga metode di atas adalah yang paling umum dipakai pada kebanyakan data, namun masih banyak teknik encoding lain seperti ordinal encoding, binary encoding, hashing trick, atau count encoding—pemilihannya bergantung pada jumlah kategori, struktur datanya, dan kebutuhan model.
-
+Tiga metode di atas adalah yang paling umum dipakai pada kebanyakan data, namun masih banyak teknik encoding lain seperti ordinal encoding, binary encoding, hashing trick, atau count encoding—pemilihannya bergantung pada jumlah kategori, struktur datanya, dan kebutuhan model. 
 
 
 Dalam praktiknya ada banyak sekali skenario preprocessing di luar yang telah dibahas—mis. format tidak konsisten, missing values, imbalance, outlier, duplikasi, noise, dan data leakage. Teknik yang dipilih bergantung pada tujuan analisis atau model, karakteristik data, dan trade-off (akurasi vs interpretabilitas vs kompleksitas). Selalu uji efek preprocessing pada data validasi/tes dan dokumentasikan langkah yang diambil.
@@ -323,10 +331,11 @@ Dalam praktiknya ada banyak sekali skenario preprocessing di luar yang telah dib
 > - “Draft an executive summary for my findings.”
 
 %%
-https://www.kaggle.com/discussions/general/313126
 https://www.kaggle.com/code/rtatman/data-cleaning-challenge-outliers
 https://www.kaggle.com/discussions/general/228307
 https://www.kaggle.com/code/shahules/an-overview-of-encoding-techniques
+https://www.kaggle.com/code/alirezahasannejad/data-preprocessing-in-machine-learning#7--Feature-scaling
+
 %%
 ### EDA
 ^[jenis jenis EDA dan bagaimana cara menanganinya, untuk vidualisasi bbrp library yg bisa dipake apa aja]
@@ -386,8 +395,11 @@ for 1 in range(8, len(cat_list)):
 		palette = 'GnBu’,
 ```
 
+==callout, library EDA untuk data visualization bisa baca kode ini https://www.kaggle.com/code/berkayalan/data-visualization-guide-with-5-libraries-eda==
+
 %%
 https://towardsdatascience.com/feature-selection-and-eda-in-python-c6c4eb1058a3/
+https://www.kaggle.com/code/berkayalan/data-visualization-guide-with-5-libraries-eda
 %%
 ### Statistical Analysis
 ^[jabaran dari 2 jenis metode beserta teori teori di dalamnya, statisticnya]
@@ -414,28 +426,26 @@ Dari exploratory data analysis hingga perancangan eksperimen untuk pengujian hip
 >- caret untuk modeling dan evaluasi
 
 
-![[Pasted image 20251123005534.png]]
+![[Pasted image 20251123005534.png | Types Statistics In Data Analysis]]
 
 #### Descriptive Statistics
 
-Metode dalam statistika untuk digunakan untuk memahami data secara langsung, dengan meringkasnya melalui ukuran-ukuran seperti rata-rata, median, modus, standar deviasi, dan rentang. Cocok sebagai langkah awal eksplorasi sebelum dilakukan analisis lebih mendalam.
+Metode dalam statistika untuk digunakan untuk memahami data secara langsung, dengan meringkasnya melalui ukuran-ukuran seperti rata-rata, median, modus, standar deviasi, dan rentang. Metode awal ini cocok sebagai langkah awal eksplorasi sebelum dilakukan analisis lebih dalam.
 
 ```python
 # library python yang sering digunakan pada statistical analysis
-import math
-import numpy as np
-import pandas as pd
-import statistics
-import scipy.stats
-import matplotlib.pyplot as plt
-import seaborn as sns
+import math               # operasi matematika
+import numpy as np        # array & komputasi numerik
+import pandas as pd       # data tabel
+import statistics         # statistik dasar
+import scipy.stats        # fungsi statistik
+import matplotlib.pyplot as plt  # visualisasi
+import seaborn as sns     # visualisasi 
 ```
-
-Library-library di atas adalah toolkit standar untuk analisis statistik di Python. NumPy dan Pandas untuk manipulasi data dan komputasi numerik, statistics dan scipy.stats untuk fungsi statistik, sementara matplotlib dan seaborn untuk visualisasi hasil analisis.
 
 ##### Measure of Central Tendancy
 
-Ketika kamu punya dataset dengan ratusan baris, kamu butuh satu nilai yang merepresentasikan keseluruhan data—seperti "berapa harga rumah tipikal?" atau "gaji rata-rata karyawan berapa?". Measure of central tendency memberikan nilai "pusat" ini: mean (rata-rata), median (nilai tengah), dan mode (nilai paling sering muncul). Berguna untuk quick summary, membandingkan grup data, atau sebagai baseline untuk deteksi outlier.
+Ketika kamu punya dataset dengan jumlah baris yang banyak, ratusan baris misalkan, kamu akan butuh nilai yang merepresentasikan keseluruhan data, seperti "berapa harga rumah tipikal?" atau "gaji rata-rata karyawan berapa?". Measure of central tendency memberikan nilai "pusat" ini: mean (rata-rata), median (nilai tengah), dan mode (nilai paling sering muncul). Berguna untuk quick summary, membandingkan grup data, atau sebagai baseline untuk deteksi outlier.
 
 ```python
 numeric_data = df.select_dtypes(exclude='object')
@@ -464,7 +474,7 @@ statistics.harmonic_mean(df['column_1'])
 - **Geometric mean** (`gmean()`): Lebih cocok untuk data yang bersifat multiplikatif atau rasio, seperti growth rate atau return on investment.
 - **Harmonic mean** (`harmonic_mean()`): Berguna untuk rata-rata dari rasio atau rate, misalnya kecepatan rata-rata.
 
-pengukuran lainnya, seperti nilai yang sering muncul dan nilai tengah juga sering digunakan
+Selain mean, ukuran lainnya seperti **median** (nilai tengah) dan **mode** (nilai yang paling sering muncul) juga penting untuk menggambarkan persebaran data secara lebih lengkap.
 
 ```python
 df['column_1'].describe()  # Memberikan count, mean, std, min, Q1, median, Q3, max
@@ -483,7 +493,29 @@ df['column_1'].quantile(0.75)  # Q3 (kuartil ketiga)
 
 ##### Measure of Variability/Dispersion
 
-Selain mengetahui nilai pusat data, kita juga perlu memahami seberapa tersebar datanya. Measure of variability memberikan informasi tentang bagaimana data bervariasi atau tersebar di sekitar nilai tengahnya. Semakin besar variabilitas, semakin beragam nilai-nilai dalam dataset.
+Selain mengetahui nilai pusat data, kita juga perlu memahami seberapa tersebar datanya. Pengukuran [Variabilitas](https://en.wikipedia.org/wiki/Variability)/[Dispersi](https://en.wikipedia.org/wiki/Statistical_dispersion) memberikan informasi tentang bagaimana data bervariasi atau tersebar di sekitar nilai tengahnya. Semakin besar variabilitas, semakin beragam nilai-nilai dalam dataset.
+
+**Varians** mengukur seberapa jauh nilai-nilai individual dalam dataset dari mean-nya. Variance yang tinggi menunjukkan data sangat bervariasi dan tersebar luas, sedangkan variance rendah menandakan data cenderung berkumpul dekat dengan mean.
+
+$$\text{Variance} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}$$
+
+Tujuan akhirnya adalah memberi gambaran seberapa konsisten atau tidaknya data tersebut, sehingga kita bisa menilai apakah dataset tersebut cenderung stabil atau justru berubah-ubah.
+
+**Standard Deviation** adalah akar kuadrat dari varians. Karena satuannya sama dengan data asli, standard deviation lebih mudah diinterpretasikan dibanding varians. Misalnya, jika data kita dalam satuan meter, standard deviation juga dalam meter.
+
+$$\text{Standard Deviation} = \sqrt{\text{Variance}} = \sqrt{\frac{\sum_{i=1}^{n}(x_i - \bar{x})^2}{n}}$$
+
+**Range** ngasih gambaran kasar tentang spread dengan melihat selisih nilai terbesar dan terkecil. Namun, range sangat sensitif terhadap outlier.
+
+$$\text{Range} = x_{\text{max}} - x_{\text{min}}$$
+
+**IQR (Interquartile Range)** lebih robust terhadap outlier karena hanya melihat 50% data di tengah (antara kuartil pertama dan ketiga). IQR sering digunakan untuk deteksi outlier dengan aturan: nilai yang berada di luar `Q1 - 1.5*IQR` atau `Q3 + 1.5*IQR` dianggap sebagai outlier potensial.
+
+$$\text{IQR} = Q_3 - Q_1$$
+
+**Kurtosis** mengukur seberapa “runcing” atau “datar” distribusi data dibanding distribusi normal. Nilai kurtosis tinggi menunjukkan banyak outlier (heavy tails), sedangkan kurtosis rendah berarti distribusi lebih datar dan ringan.
+
+$$\text{Kurtosis} = \frac{\sum_{i=1}^{n}(x_i - \bar{x})^4}{n \cdot \sigma^4} - 3$$
 
 ```python
 # Variance - mengukur seberapa jauh data tersebar dari mean
@@ -501,54 +533,69 @@ Q1 = df['column_1'].quantile(0.25)
 Q3 = df['column_1'].quantile(0.75)
 IQR = Q3 - Q1
 ```
-
-**Variance** mengukur seberapa jauh nilai-nilai individual dalam dataset dari mean-nya. Variance yang tinggi menunjukkan data sangat bervariasi dan tersebar luas, sedangkan variance rendah menandakan data cenderung berkumpul dekat dengan mean.
-
-The variance is often used to quantify spread or dispersion. Spread is a characteristic of a sample or population that describes how much variability there is in it.
-
-**Standard Deviation** adalah akar kuadrat dari variance. Karena satuannya sama dengan data asli, standard deviation lebih mudah diinterpretasikan dibanding variance. Misalnya, jika data kita dalam satuan meter, standard deviation juga dalam meter.
-“Dispersement” tells you how much your data is spread out.
-Specifically, it shows you how much your data is spread out around the mean or average
-
-> [!NOTE] Perbedaan Varians dan Standard Deviasi 
-> Variance is a method to find or obtain the measure between the variables that how are they different from one another, whereas standard deviation shows us how the data set or the variables differ from the mean or the average value from the data set.
-> 
-> Variance helps to find the distribution of data in a population from a mean, and standard deviation also helps to know the distribution of data in population, but standard deviation gives more clarity about the deviation of data from a mean.
-
-2 hal itu penting pada penerapan data, adapun perhitungan lainnya
-
-**Range** memberikan gambaran kasar tentang spread dengan melihat selisih nilai terbesar dan terkecil. Namun, range sangat sensitif terhadap outlier.
-
-**IQR (Interquartile Range)** lebih robust terhadap outlier karena hanya melihat 50% data di tengah (antara kuartil pertama dan ketiga). IQR sering digunakan untuk deteksi outlier dengan aturan: nilai yang berada di luar `Q1 - 1.5*IQR` atau `Q3 + 1.5*IQR` dianggap sebagai outlier potensial.
-
-**Kurtosis** mengukur seberapa “runcing” atau “datar” distribusi data dibanding distribusi normal. Nilai kurtosis tinggi menunjukkan banyak outlier (heavy tails), sedangkan kurtosis rendah berarti distribusi lebih datar dan ringan.
-
-##### Shape of Data
-
-![[Pasted image 20251123011214.png]]
 #### Inferential Statistics
 
-Inferential Statistics - offers methods to study experiments done on small samples of data and chalk out the inferences to the entire population (entire domain).
+Statisika inferensia adalah tahap dimana analisa data didapat dari merangkum data yang ada (statistik deskriptif) ke membuat kesimpulan yang lebih luas dan pengambilan keputusan berbasis bukti mengenai sumber daya yang lebih besar (populasi).
 
 ![[Pasted image 20251123102030.png]]
 
-**Population Vs Samples**:
+> [!info] Bedanya Populasi dan Sampel
+> **Populasi** adalah keseluruhan kelompok yang ingin kita teliti, biasanya terlalu besar untuk diperiksa satu per satu, Sehingga diambillah sebagian data yang merepresentasikan keseluruhan data. **Sampel** adalah subset representatif dari populasi tersebut yang kita pilih untuk dianalisis. Dengan sampel yang tepat, kita bisa menarik kesimpulan tentang populasi tanpa harus memeriksa setiap elemennya.
 
-- In statistics, the **population is a set of all elements or items that you’re interested in**. Populations are often vast, which makes them inappropriate for collecting and analyzing data. That’s why statisticians usually try to make some conclusions about a population by choosing and examining a representative subset of that population.
-    
-- This **subset of a population is called a sample**. Ideally, the sample should preserve the essential statistical features of the population to a satisfactory extent. That way, you’ll be able to use the sample to glean conclusions about the population.
+==mbahas sampling singkat aja nih, dan contoh use case rill==
 
-masih statistical analysis
+```python
+import numpy as np
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+#random sampling
+data.sample(5)
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+# systematic sampling
+k = 5 # Ambil setiap elemen ke-5
+indeks_sistematis = np.arange(0, len(df), k)
+sampel_sistematis = data.iloc[indeks_sistematis]
+```
 
-ini rumus statistik
+**Confidence interval** 
+##### Inferential Statistics
 
-lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum
+**Confidence Interval** Confidence interval kasih kita range nilai yang kemungkinan besar mengandung parameter populasi sebenarnya (misalnya mean populasi). Biasanya pakai 95% confidence level, artinya kalau kita ambil 100 sample berbeda, sekitar 95 di antaranya bakal punya interval yang mengandung nilai sebenarnya.
 
-==kasi tips/trik library untuk mempermudah analisa statistik ==
+$$\text{CI} = \bar{x} \pm Z \cdot \frac{\sigma}{\sqrt{n}}$$
+
+**Hypothesis Testing** Hypothesis testing adalah cara formal buat ngecek apakah suatu klaim tentang data itu valid atau ngga. Kita mulai dengan dua hipotesis: null hypothesis (H₀) yang bilang "ga ada efek/perbedaan" dan alternative hypothesis (H₁) yang bilang sebaliknya. Kita pakai data untuk decide mana yang lebih masuk akal.
+
+Contoh sederhana: test apakah rata-rata nilai kelas A beda signifikan dari kelas B.
+
+$$t = \frac{\bar{x} - \mu_0}{SE}$$
+
+> [!NOTE] 
+> Kalau mau explore lebih dalam tentang inferensial statistik di Python terutama analisis confidence interval dan hypothesis testing, kamu bisa cek repo salah satu temanku disini: https://github.com/devanshmalik/Inferential-Stats-in-Python/tree/master
+
+**Standard Error** Standard error (SE) ngukur seberapa akurat sample mean kita sebagai estimasi dari true population mean. Semakin besar sample size, semakin kecil SE—artinya estimasi kita semakin reliable. Ini bedanya sama standard deviation: SD ngukur variasi data, SE ngukur variasi dari estimasi kita.
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+
+```python
+import numpy as np
+from scipy import stats
+
+# Confidence Interval (95%)
+mean = np.mean(data)
+std_error = stats.sem(data)  # Standard Error of Mean
+confidence_level = 0.95
+ci = stats.t.interval(confidence_level, 
+                      len(data)-1,  # degrees of freedom
+                      loc=mean, 
+                      scale=std_error)
+
+# Hypothesis Testing (One-sample t-test)
+# H0: population mean = 30
+# H1: population mean ≠ 30
+hypothesized_mean = 30
+t_statistic, p_value = stats.ttest_1samp(data, hypothesized_mean)
+```
+==contoh penggunaan inferensial dan deskriptif dalam data==
 
 Dalam konteks proyek data dan AI, analisis statistik memberikan dasar pemahaman terhadap pola, tren, dan hubungan dalam data. Tahapan seperti deskriptif, inferensial, hingga pengujian hipotesis membantu memastikan keputusan berbasis data dilakukan secara objektif dan terukur. Dengan kata lain, statistik melengkapi proses data cleaning dan processing dengan memberikan makna yang dapat langsung dipakai untuk permodelan dan evaluasi.
 
@@ -563,36 +610,75 @@ https://www.itl.nist.gov/div898/handbook/index.htm
 ### Feature Engineering
 ^[jenis-jenis dan penjabarannya]
 
-Feature engineering adalah bagian dari data preprocessing, tapi ini adalah part yang paling spesifik dan membutuhkan domain knowledge yang dalam. Berbeda dengan cleaning atau normalisasi yang bisa mengikuti standard procedure, feature engineering requires pemahaman tentang problem domain—kamu perlu tahu features mana yang benar-benar meaningful dan bagaimana cara mengekstrak signal dari noise.
+Feature engineering adalah bagian dari data preprocessing, tapi ini adalah part yang paling spesifik dan membutuhkan domain knowledge yang dalam. Berbeda dengan proses cleaning atau normalisasi data yang bisa mengikuti standard procedure, feature engineering requires pemahaman tentang problem domain, kamu perlu tahu fitur mana yang benar-benar meaningful dan bagaimana cara mengekstrak signal dari noise.
 
-Dalam praktiknya, terutama ketika dealing dengan dataset besar (ratusan ribu hingga jutaan rows dengan puluhan atau ratusan features), approach feature engineering tidak bisa sembarangan. Salah handling bisa bikin model overfitting, underfitting, atau bahkan completely misleading. Misalnya, di financial data, feature `income_last_month` punya makna yang berbeda dengan `average_income_12months` keduanya dari raw data yang sama tapi impact-nya ke model sangat berbeda. Di healthcare data, combining age dan medical history sembarangan bisa introduce bias yang dangerous. Ini kenapa domain expertise jadi critical—kamu perlu tahu "why" di balik setiap feature yang kamu create atau select.
+> Buat yang masih bingung feature (fitur) itu apa, basically column pada data
+
+Dalam praktiknya, terutama ketika dealing dengan dataset besar (ratusan ribu hingga jutaan rows dengan puluhan atau ratusan features), approach feature engineering perlu ketelitian. Salah handling bisa bikin model overfitting, underfitting, atau bahkan completely misleading. M
 
 Ada banyak teknik dalam feature engineering, dari feature selection hingga synthetic data generation. Di handbook ini, kita fokus ke teknik yang paling sering dipakai dan directly applicable.
 
-1. **Feature Selection** Memilih subset features yang paling relevan dari dataset. Tujuannya mengurangi noise, mempercepat training, dan improve model performance.
-==rada effort cuy, feature selection ni jgn panjang panjang, hrus pas di 2 halaman==
+1. **Feature Selection** 
 
-ada 2 jenis/cara terkait pendekatan selection: filter method dan wrapper method
-The fundamental difference is that filter method evaluates the feature importance based on statistical tests such as Chi-Square, ANOVA etc, whereas wrapper method iteratively assessed the performance of subsets of features based the performance of models generated by these features.
+Memilih subset features yang paling relevan dari dataset. Tujuannya mengurangi noise, mempercepat training, dan improve model performance. Bayangin kamu punya 100 kolom tapi cuma 15 yang beneran ngaruh—sisanya cuma bikin model bingung.
 
+Ada 2 pendekatan utama dalam feature selection:
+
+**Filter Method** - Evaluasi feature importance based on statistical tests seperti Chi-Square atau ANOVA. Ini independent dari model, jadi cepat dan cocok untuk dataset besar. Basically kamu test korelasi atau statistical significance setiap feature terhadap target variable.
+
+```python
+from sklearn.feature_selection import SelectKBest, chi2, f_classif
+
+# Untuk categorical target
+selector = SelectKBest(chi2, k=10)  # pilih 10 features terbaik
+X_selected = selector.fit_transform(X, y)
+
+# Untuk numerical target
+selector = SelectKBest(f_classif, k=10)
+X_selected = selector.fit_transform(X, y)
+```
+
+**Wrapper Method** - Evaluasi features berdasarkan performa model yang dihasilkan. Lebih akurat tapi lebih lambat karena perlu train model berkali-kali. Contohnya Recursive Feature Elimination (RFE) yang iteratively buang feature paling ga penting.
+
+```python
+from sklearn.feature_selection import RFE
+from sklearn.ensemble import RandomForestClassifier
+
+model = RandomForestClassifier()
+rfe = RFE(model, n_features_to_select=10)
+X_selected = rfe.fit_transform(X, y)
+```
+
+2. **Feature Extraction**
+Membuat features baru dari kombinasi features yang sudah ada. 
 
 Contoh sederhana:
 - Dari `height` dan `weight` → create `BMI = weight / (height²)`
 - Dari `purchase_date` dan `current_date` → create `days_since_purchase`
 - Dari `total_amount` dan `quantity` → create `average_price_per_item`
 
-2. **Feature Extraction** Membuat features baru dari kombinasi features yang sudah ada. Contohnya membuat feature "BMI" dari height dan weight.
+```python
+import pandas as pd
+
+# Date features
+df['purchase_date'] = pd.to_datetime(df['purchase_date'])
+df['days_since_purchase'] = (pd.Timestamp.now() - df['purchase_date']).dt.days
+df['purchase_month'] = df['purchase_date'].dt.month
+
+# Derived features
+df['BMI'] = df['weight'] / (df['height'] ** 2)
+df['price_per_item'] = df['total_amount'] / df['quantity']
+```
 
 3. **Feature Scaling**
-Tujuannya adalah memastikan semua fitur punya skala yang sebanding sehingga berkontribusi secara seimbang terhadap performa model. Ini penting banget untuk algoritma yang sensitif terhadap skala input, seperti model berbasis gradient descent (neural networks, regresi logistik) atau algoritma berbasis jarak (KNN, SVM).
+Tujuannya memastikan semua fitur punya skala yang sebanding sehingga berkontribusi seimbang ke model. Ini critical untuk algoritma yang sensitif terhadap skala seperti neural networks, gradient descent-based models (logistic regression), atau distance-based algorithms (KNN, SVM).
 
 ```python
 from sklearn.preprocessing import MinMaxScaler
-import pandas as pd
  
-scaler = MinMaxScaler()
+minmax = MinMaxScaler()
 
-data_scaled = scaler.fit_transform(data)
+data_scaled_minmax = scaler.fit_transform(data)
 ```
 
 Setelah apply Min-Max scaling, nilai setiap fitur ditransformasi ke rentang [0, 1]. Fitur yang tadinya punya satuan dan skala berbeda-beda, sekarang punya bobot yang comparable.
@@ -603,9 +689,12 @@ Selain Min-Max, ada beberapa teknik scaling yang sering dipakai dalam feature en
 
 - **Robust Scaling**: Pakai median dan IQR (Interquartile Range) instead of mean dan standard deviation. Lebih tahan terhadap outliers, jadi cocok dipakai ketika dataset kamu punya banyak nilai ekstrem yang nggak bisa langsung di-remove.
 
+>[!NOTE]
+>**Standarisasi**: pakai kalau fitur nilainya sangat berbeda (contoh: gaji Rp3 juta–Rp100 juta) supaya skala jadi comparable (mean ≈0, std ≈1) — cocok untuk model yang mengandalkan jarak atau  perhitungan varians, seperti SVM, regresi, PCA. **Normalisasi**: pakai kalau mau paksa semua fitur ke rentang 0–1 (contoh: klik 0–300 dan durasi 0–120s) supaya fitur setara — cocok untuk neural network, KNN, k-means.
+
 %%
 https://neptune.ai/blog/feature-selection-methods
-
+https://www.ibm.com/think/topics/feature-engineering
 %%
 ### Data Mining
 
@@ -616,7 +705,6 @@ kamu bisa belajar machine learning dengan teknik reversel, reverse artinya belaj
 berikut contoh proyek data mining yang sebagai contoh dari teknik teknik yang telah dipelajari sebelumnya
 
 ==ini masih dummy dan perlu diganti dgn notebook yg lebih sesuai==
-
 **1. House Prices – Advanced Regression Techniques (Kaggle)**  
 Proses: data cleaning → feature engineering (log transform, ordinal encoding) → model comparison → tuning.  
 Model akhir: **XGBoost Regressor**.
@@ -835,7 +923,7 @@ for n in [50,100]:
 print(best)
 ```
 
- 2. Grid Search
+ 2. **Grid Search**
  
 `GridSearchCV` melakukan pencarian dengan mencoba semua kombinasi nilai parameter yang kamu definisikan dalam sebuah “grid”. Saat kamu menjalankan _fit_, Grid Search akan mengevaluasi setiap kombinasi dengan cross-validation dan memilih yang performanya terbaik.
 
@@ -847,7 +935,7 @@ Pendekatan ini cocok ketika jumlah parameter sedikit atau rentang nilainya tidak
 > - See [Sample pipeline for text feature extraction and evaluation](https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-plot-grid-search-text-feature-extraction-py) for an example of Grid Search coupling parameters from a text documents feature extractor (n-gram count vectorizer and TF-IDF transformer) with a classifier (here a linear SVM trained with SGD with either elastic net or L2 penalty) using a [`Pipeline`](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline "sklearn.pipeline.Pipeline") instance.
 >  
 
- 3. Random Search
+ 3. **Random Search**
 
  Meskipun Grid Search lebih sering digunakan, namun terkadang Random Search sering lebih efisien. `RandomizedSearchCV` melakukan pencarian hyperparameter dengan mengambil sampel acak dari lingkup ruang parameter. 2 kondisi ketika random search lebih kepake: 
 
@@ -889,15 +977,80 @@ https://scikit-learn.org/stable/modules/grid_search.html
 %%
 ### Ensemble Learning
 ^[jenis-jenis dan penerapannya dalam beberapa studi kasus, ringkasan algoritma serta teknik teknik lainnya]
-==bakal panjang ini wak, klo di handbook bakal >3 halaman dah==
 
 Kalau kamu sering eksplor kompetisi Kaggle, kamu pasti notice bahwa top performers di leaderboard sering bukan pakai deep learning—mereka pakai ensemble methods. Teknik ini consistently menghasilkan akurasi tinggi dan sering jadi game changer dalam kompetisi.
 
 Tapi seberapa powerful sebenarnya ensemble ini? Surprisingly, konsepnya cukup straightforward: kita combine beberapa model untuk menghasilkan prediksi yang lebih baik. Ide dasarnya adalah "wisdom of crowds"—beberapa model yang decent, kalau digabung dengan cara yang tepat, bisa menghasilkan performa yang jauh lebih baik dibanding satu model terbaik sekalipun.
 
 Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (bisa berbeda algoritma atau hyperparameter), kita combine prediksi mereka. Yang sering terjadi adalah hasil ensemble ini lebih robust dan akurat dibanding individual models.
+==tambahin bahwa secara algoritma ensemble itu mengurangi model error, seperti bias error dan variance==
 
-==perlu ditambahin apa gw gtau==
+jenis jenis algoritma 
+
+**Bagging (Bootstrap Aggregating)**
+Bagging melatih multiple model secara paralel pada subset data bootstrap (dengan penggantian), lalu menggabungkan prediksi via rata-rata (regresi) atau mayoritas model (klasifikasi). Contoh algoritma yang cukup populer yaitu Random Forest yang ampuh buat mengurangi variance dan overfitting.
+
+```python
+from sklearn.ensemble import BaggingClassifier, RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+# Bagging manual dengan base estimator
+bagging = BaggingClassifier(
+    estimator=DecisionTreeClassifier(),
+    n_estimators=100,
+    random_state=42
+)
+bagging.fit(X_train, y_train)
+
+# Random Forest (bagging + random feature selection)
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+```
+
+**Boosting**
+Boosting membangun model secara sekuensial, di mana setiap model baru fokus memperbaiki error model sebelumnya dengan memberi bobot lebih pada sampel sulit, contohnya AdaBoost, Gradient Boosting, atau XGBoost yang unggul di tabular data.​
+
+```python
+from sklearn.ensemble import AdaBoostClassifier, GradientBoostingClassifier
+from xgboost import XGBClassifier
+
+# AdaBoost
+ada = AdaBoostClassifier(n_estimators=100, random_state=42)
+ada.fit(X_train, y_train)
+
+# Gradient Boosting
+gb = GradientBoostingClassifier(n_estimators=100, learning_rate=0.1, random_state=42)
+gb.fit(X_train, y_train)
+
+# XGBoost (lebih cepat dan powerful)
+xgb = XGBClassifier(n_estimators=100, learning_rate=0.1, random_state=42)
+xgb.fit(X_train, y_train)
+```
+
+**Stacking**
+Teknik stacking ini pada praktiknya tergolong penerapan yang lebih rumit dibandingkan 2 teknik sebelumnya, Stacking menggunakan base models beragam (misal Random Forest + XGBoost), lalu meta-model dibuat dari prediksi base tersebut untuk hasil optimal, ideal untuk kombinasi dari berbagai algoritma dalam menangani data yang kompleks.​ meta model 
+
+```python
+from sklearn.ensemble import StackingClassifier
+from sklearn.linear_model import LogisticRegression
+
+# Base models
+base_models = [
+    ('rf', RandomForestClassifier(n_estimators=100, random_state=42)),
+    ('xgb', XGBClassifier(n_estimators=100, random_state=42)),
+    ('gb', GradientBoostingClassifier(n_estimators=100, random_state=42))
+]
+
+# Meta-model
+stacking = StackingClassifier(
+    estimators=base_models,
+    final_estimator=LogisticRegression(),
+    cv=5
+)
+stacking.fit(X_train, y_train)
+```
+
+Meskipun stacking terkesan kompleks, namun menggunakan stacking dapat meningkatkan risiko overfitting terutama kalau base model terlalu banyak atau meta-model terlalu kompleks, jadi pastikan pakai cross-validation yang proper dan monitor performa di validation set.
 
 **Ensemble Algorithm overview**
 
@@ -914,6 +1067,8 @@ Prosesnya begini: setelah kita train beberapa model dengan performa yang bagus (
 
 **Other ensembling techniques**
 
+- Max Voting / Voting classifier
+- Averaging dan Weighted averaging
 - Hyper-ensembles: same basic model but with different hyperparameter settings
 - Can combine overfitted and underfitted models
 - Deep ensembles: ensembles of deep learning models
