@@ -53,15 +53,13 @@ unique value: buku pedoman compact, tanpa bertele tele
 
 ## Pengantar
 
-Data dan kecerdasan buatan (AI) sekarang udah jadi bagian penting di banyak bidang—bisnis, pendidikan, sampai riset ilmiah. Perkembangannya yang super cepat bikin kebutuhan akan orang yang paham data dan ML terus naik. Alhasil, kemampuan praktis dalam data science dan machine learning jadi skill wajib buat mahasiswa maupun praktisi yang pengin langsung turun ke dunia nyata.
+Data dan kecerdasan buatan (AI) sekarang sudah jadi bagian penting di banyak bidang—bisnis, pendidikan, sampai riset ilmiah. Perkembangannya yang super cepat bikin kebutuhan akan orang yang paham data dan ML terus naik. Alhasil, kemampuan praktikal dalam data science dan machine learning jadi skill wajib buat mahasiswa maupun praktisi yang ingin membangun portofolio proyek yang solid.
 
-Masalahnya, materi belajar tentang data dan AI itu kebanyakan terlalu banyak dan nggak terarah. Di Indonesia sendiri, sumber yang ringkas, relevan, dan berbahasa Indonesia juga belum banyak. Banyak pilihan belajar yang makan waktu lama atau terlalu teoretis, sehingga bikin orang jadi bingung mulai dari mana. Padahal, banyak dari kita cuma butuh panduan praktis yang bisa langsung dipakai buat ngerjain proyek, ikut lomba, atau bikin solusi AI.
+Masalahnya, materi belajar tentang data dan AI itu tersebar dan sering tidak terstruktur. Di Indonesia sendiri, sumber yang ringkas, relevan, dan berbahasa Indonesia masih terbatas, sementara banyak pilihan belajar malah panjang, dan mahal, atau terlalu fokus ke teori. Akhirnya banyak orang bingung harus mulai dari mana, padahal yang dibutuhkan sebenarnya panduan praktis yang bisa langsung dipakai untuk ngerjain proyek, ikut kompetisi, atau membangun solusi AI sederhana.
 
-Handbook ini disusun untuk menjawab kebutuhan tersebut. Dengan format yang compact, praktikal, dan mudah dipahami, buku ini membantu pembaca mempelajari dasar-dasar data science dan ML secara cepat dan cukup. Materi dikurasi dari pengalaman nyata, baik dari perkuliahan data science maupun dunia kerja, agar pembaca bisa langsung menerapkan konsep yang penting tanpa harus memilah-milah sumber yang rumit atau tidak relevan.
+Handbook ini disusun untuk menjawab kebutuhan tersebut. Dengan format yang compact, praktikal, dan mudah dipahami, buku ini membantu pembaca mempelajari dasar-dasar data science dan machine learning secara cepat dan tepat sasaran. Materinya dikurasi dari pengalaman langsung, baik dari perkuliahan data science maupun pengerjaan proyek di dunia kerja, sehingga pembaca bisa fokus pada konsep yang penting, applicable, dan yang paling penting berbahasa Indonesia.
 
-Materi tentang Data dan ML ini aku kurasi dari berbagai sumber dan pengalaman pribadi mulai dari kuliah teknik sains data di kampus hingga pengalaman kerjasupaya kamu bisa langsung belajar hal-hal yang benar-benar penting, applicable, dan yang paling penting ber Bahasa Indonesia. 
-
-Cocok untuk:
+Buku ini cocok untuk kamu yang ingin:
 
 - Memulai proyek ML pertama
 - Persiapan lomba AI/data science
@@ -69,24 +67,27 @@ Cocok untuk:
 - Implementasi solusi AI untuk tugas kuliah atau skripsi
 - Membuat Proof of Concept untuk startup/ide bisnis AI
 
-> This ebook is 75% written by human, 25% AI-assisted. The percentage reflects time allocation in resource curation, structuring, and sentence crafting.
+>This ebook is 75% written by humans and 25% AI-assisted. The percentage reflects the overall time spent on curating references, organizing the material, refining explanations, and crafting the final wording. The AI assistance is used mainly to speed up drafting and rephrasing, while the core ideas, structure, and content direction remain human-driven.
 
 ---
 
 gambar perbedaan AI/ML/DS sebagai dasar
 
 ---
+
 ## Prerequisite
+
 Python jadi pilihan utama di AI karena syntaxnya paling mudah dipelajari dan struktur-nya mendekati bahasa manusia—jadi kamu bisa langsung fokus ke problem solving tanpa tersangkut detail teknis. Kemudahan ini bikin prototyping berjalan cepat, dan speed itu penting banget dalam AI development yang sifatnya iteratif dan butuh banyak trial-and-error.
 
-Terus, ekosistem Python untuk AI itu beneran lengkap. PyTorch dan TensorFlow yang kamu pakai untuk neural networks, NumPy dan Pandas untuk data processing sebelum training—semuanya ada dan matang. Kombinasi library yang comprehensive, komunitas besar yang terus update dengan teknologi AI terbaru, plus backing dari perusahaan tech global, membuat Python tetap jadi bahasa yang biasanya jadi first choice di riset dan development AI.
+Terus, ekosistem Python untuk AI itu beneran lengkap. PyTorch dan TensorFlow dipakai untuk bangun neural networks, scikit-learn jadi standar untuk machine learning klasik seperti regression, classification, clustering, sementara NumPy dan Pandas menangani data processing sebelum training. Semua library ini matang, stabil, dan saling terintegrasi dengan baik. Kombinasi ekosistem yang comprehensive, komunitas besar yang terus update dengan teknologi terbaru, plus backing dari perusahaan tech global, membuat Python tetap jadi bahasa yang biasanya jadi first choice di riset dan development AI.
+==paragraf kedua, kalimat muulai dari semua library itu kureng dan perlu diganti==
 ## Data and Digital Use case
-^[Jadi ini tuh bakal bahas apa itu data, format, jenis dan bentuknya serta fundamentalnya dalam konteks AI, bagaimana cara mengolah dan menggunakanya (digunakan untuk apa dan mengapa)]
+^[Jadi ini tuh bakal bahasa apa itu data, format, jenis dan bentuknya serta fundamentalnya dalam konteks AI, bagaimana cara mengolah dan menggunakanya (digunakan untuk apa dan mengapa)]
 ### Understanding Data in AI Contexts
 
 Dalam dunia AI, data adalah bahan baku utama yang memberi “pengetahuan” bagi mesin untuk belajar dan membuat keputusan.
 
-Data digunakan untuk melatih model AI agar mengenali pola, memprediksi hasil, dan memberikan solusi berbasis pengalaman sebelumnya. Formatnya tidak hanya berupa angka, tetapi juga mencakup teks, gambar, suara, dan video. Semakin banyak dan semakin berkualitas data yang digunakan, semakin baik pula performa model AI.
+Data digunakan untuk melatih model AI agar mengenali pola, memprediksi hasil, dan memberikan solusi berbasis pengalaman sebelumnya. Formatnya tidak hanya berupa teks, tetapi juga mencakup angka, gambar, suara, dan video. Semakin banyak dan semakin berkualitas data yang digunakan, semakin baik pula performa dari si model AI.
 
 | Jenis Data           | Penjelasan                                                      | Contoh Penggunaan                                                    |
 | -------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------- |
@@ -95,21 +96,18 @@ Data digunakan untuk melatih model AI agar mengenali pola, memprediksi hasil, da
 | Unstructured Data    | Tidak punya format tetap seperti teks, gambar, audio, video.    | Analisis sentimen media sosial, pengenalan wajah, transkripsi suara. |
 | Synthetic Data       | Data buatan yang menyerupai data asli untuk melatih model.      | Latihan AI generatif tanpa melibatkan data pengguna nyata.           |
 
-Sumber data sangat beragam, mulai dari sensor IoT, media sosial, hingga sistem internal. Tiap sumber punya format dan kualitas berbeda yang perlu dikelola dengan tepat.
+Jenis sumber data sangat beragam, mulai dari sensor IoT, media sosial, hingga sistem internal. Tiap sumber punya format dan kualitas berbeda yang perlu dikelola dengan tepat.
 
 Dari sisi engineering, pembuat proyek perlu memahami cara data dikumpulkan dan diolah agar bisa dimanfaatkan secara efektif dalam pengembangan AI.
-
-### How AI work with Data
+### How AI Uses Data
 
 If the data is already, How AI Leverages data to learn, adapt, and deliver the best outcomes?
 
-- Training AI Models: Untuk membangun model AI yang efektif, data digunakan sebagai bahan pelatihan. Contohnya pada NLP, model dilatih menggunakan kumpulan besar data teks agar mampu memahami tata bahasa, makna kata, hingga analisis sentimen.
-- Data-Driven Decision Making: Data yang berkualitas memungkinkan sistem AI membuat keputusan secara akurat dan real-time. Sebagai contoh, mobil otonom memanfaatkan data dari berbagai sensor untuk mengenali lingkungan dan menavigasi jalan dengan aman. Contoh lainnya, market analysis bot menggunakan data transaksi, tren harga, dan sentimen pasar untuk memberikan rekomendasi investasi.
-- Personalization and Recommendations - Algoritma AI menggunakan data perilaku dan preferensi pengguna untuk menghasilkan pengalaman yang lebih personal. Contohnya Algoritma konten di Tiktok.
+- **Training AI Models**: Untuk membangun model AI yang efektif, data digunakan sebagai bahan pelatihan. Contohnya pada NLP, model dilatih menggunakan kumpulan besar data teks agar mampu memahami tata bahasa, makna kata, hingga analisis sentimen.
+- **Data-Driven Decision Making**: Data yang berkualitas memungkinkan sistem AI membuat keputusan secara akurat dan real-time. Sebagai contoh, mobil otonom memanfaatkan data dari berbagai sensor untuk mengenali lingkungan dan menavigasi jalan dengan aman. Contoh lainnya, market analysis bot menggunakan data transaksi, tren harga, dan sentimen pasar untuk memberikan rekomendasi investasi.
+- **Personalization and Recommendations** - Algoritma AI menggunakan data perilaku dan preferensi pengguna untuk menghasilkan pengalaman yang lebih personal. Contohnya Algoritma konten di Tiktok.
 
-Dalam dunia AI, data adalah bahan baku utama yang memberi “pengetahuan” bagi mesin untuk belajar dan membuat keputusan.
-
-Data digunakan untuk melatih model AI agar mengenali pola, memprediksi hasil, dan memberikan solusi berbasis pengalaman sebelumnya. Formatnya tidak hanya berupa angka, tetapi juga mencakup teks, gambar, suara, dan video. Semakin banyak dan semakin berkualitas data yang digunakan, semakin baik pula performa model AI.
+==perlu callout satu ==
 
 ### Where to Get Data
 
@@ -130,7 +128,6 @@ API-Based Sources: Real-time data pulls.
 - Twitter API for sentiment analysis data; OpenWeatherMap for climate data.
 - Custom Sources: Collect your own via surveys, sensors, or web scraping (ethically and legally).
 
-==final penutup dari data ini perlu diperbaiki, supaya catatan ini lebih kepake==
 **Checklist for Data**
 
 □ Define your project's data needs (e.g., volume, type).
@@ -141,6 +138,8 @@ API-Based Sources: Real-time data pulls.
 
 - [https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for](https://mitsloan.mit.edu/ideas-made-to-matter/machine-learning-and-generative-ai-what-are-they-good-for)
 - [https://www.potterclarkson.com/insights/what-data-is-used-to-train-an-ai-where-does-it-come-from-and-who-owns-it](https://www.potterclarkson.com/insights/what-data-is-used-to-train-an-ai-where-does-it-come-from-and-who-owns-it/)
+
+==final penutup dari data ini perlu diperbaiki, supaya catatan ini lebih kepake==
 ## Data Analysis and Preprocessing
 
 ### Data Preprocessing
@@ -157,7 +156,16 @@ Proses preprocessing mencakup berbagai aktivitas seperti penanganan missing valu
 
 **Bagaimana jika data punyaku ga lengkap?** (Missing Value Handling)
 
-Pada data yang kosong, terdapat cara sederhana yaitu mengisi dengan rata-rata (mean), median, atau nilai yang sering muncul (mode). Namun pada praktiknya, data yang hilang belum tentu cocok diisi dengan nilai statistik sederhana—tergantung pola dan konteks datanya.
+Seringkali data yang kita dapatkan memiliki beberapa atau banyak nilai kosong, dan ini tidak boleh dibiarkan karena dapat memengaruhi performa model, terutama model yang sensitif terhadap distribusi data seperti regresi, tree-based model tanpa imputation yang tepat, maupun algoritma jarak seperti KNN. Nilai kosong dapat membuat prediksi menjadi bias atau tidak stabil jika tidak ditangani.
+
+Beberapa alasan umum mengapa data bisa kosong:
+
+- Pengguna lupa mengisi suatu field.
+- Data hilang saat proses migrasi atau transfer.
+- Kesalahan pemrograman.
+- Pengguna memilih tidak mengisi data tertentu karena alasan privasi atau persepsi terhadap penggunaan data.
+
+Dalam praktiknya, nilai kosong dapat ditangani dengan dua pendekatan utama: menghapus data atau mengisinya kembali. Jika jumlah nilai kosong tidak terlalu besar, baris atau kolom yang hilang bisa dihapus tanpa menambah bias berarti. Namun jika datanya penting, nilai kosong dapat diisi menggunakan mean, median, atau mode—sesuai tipe datanya. Pendekatan ini cocok dengan implementasi Python di bawah, yang biasanya menggunakan `dropna()` untuk menghapus data dan `fillna()` atau `SimpleImputer` untuk melakukan imputasi.
 
 ```python
 from sklearn.impute import SimpleImputer, IterativeImputer
@@ -174,6 +182,8 @@ df['column_2'].interpolate(method='polynomial', order=2)
 # Iterative Imputation - prediksi dari fitur lain (paling akurat)
 IterativeImputer(max_iter=10).fit_transform(df)
 ```
+
+Namun pada praktiknya, data yang hilang belum tentu cocok diisi dengan nilai statistik sederhana—tergantung pola dan konteks datanya.
 
 **Fitur data milikku tidak seimbang? (Imbalance Dataset)**
 Pada data klasifikasi yang jumlah kelasnya timpang, model cenderung bias terhadap kelas mayoritas. Cara umum mengatasinya yaitu oversampling, undersampling, atau membuat bobot kelas saat training.
@@ -196,29 +206,58 @@ model = LogisticRegression(class_weight='balanced')
 ```
 
 **Pada data yang kumiliki ada bbrapa point yang terlalu berbeda… (Outlier Handling)**
-Outlier bisa memengaruhi model, terutama model yang sensitif terhadap nilai ekstrem. Cara umum yaitu trimming, winsorizing, dan transformasi.
+Outlier bisa memengaruhi model, terutama model yang sensitif terhadap nilai ekstrem. Cara umum yaitu trimming, winsorizing, censoringdan transformasi.
+
+**Detecting Outliers**
+
+There are several techniques to detect the outliers. In which most important and generally used technique to detect outliers is
+
+- Using Visualization plots such as boxplot and scatter plot
+- using the normal Distribution (mean and std dev).
+
+```python
+df = data.copy()
+
+IQR = df['Age'].quantile(0.75) - df['Age'].quantile(0.25)
+
+lower = df['Age'].quantile(0.25) - 1.5* IQR
+upper = df['Age'].quantile(0.75) + 1.5* IQR
+
+outliers = np.where(df['Age']>upper,True, np.where(df['Age']<lower,True,False))
+
+df = df.loc[~(outliers)]
+```
+
+```python
+# or you can write in this way too..
+df = df[~((df['Age']<lower) & (df['Age']>upper))]
+#df
+```
+
+
+Other ways to handle outliers:
+
+1. **_Remove the outliers:_** Before deleting the entries having outliers, make sure the they aren’t adding any significant information and also that the dataset is not too small as deleting rows from datasets with a smaller number of records would mean losing vital information.
+2. **_Imputation with Mean/Median/Mode:_** Replace the outliers with any of the measures of central tendency just as we do in missing value imputation.
+3. **_Quantile based flooring:_** This method is like squeezing the far-off values so that they fall within the range.
+4. **_Transformation:_** If the data is skewed, applying logarithmic, square or square root transformation might help.
+
+==tambahkan callout untuk detail handling outlier==
+
+==sek, effort nih nyajiin cara outlier handling==
 
 
 **Terdapat bbrp data yang sama (Duplikasi data )**
 Data duplikat bisa membuat pola statistik terdistorsi. Solusinya yaitu pemeriksaan baris identik atau duplikasi berdasarkan subset kolom tertentu.
-
-
-**Bagaimana cara kalkulasi data kategorikal? (Encoding)**
-Data kategorikal harus diubah menjadi angka sebelum masuk model. Metode dasar yaitu one-hot, label encoding, atau target encoding untuk high-cardinality.
-
 ```python
-from sklearn.preprocessing import OneHotEncoder, LabelEncoder
-import pandas as pd
+# Cek duplikasi
+df.duplicated().sum()
 
-# Label Encoding
-df['color_le'] = LabelEncoder().fit_transform(df['color'])
+# Hapus duplikasi seluruh kolom
+df = df.drop_duplicates()
 
-# One-hot encoding
-df = pd.get_dummies(df, columns=['city'])
-
-# Target encoding sederhana
-means = df.groupby('category')['target'].mean()
-df['category_te'] = df['category'].map(means)
+# Hapus duplikasi berdasarkan kolom tertentu
+df = df.drop_duplicates(subset=['name','date'])
 ```
 
 **Format data tidak konsisten? (Inconsistent Data Format)**
@@ -237,6 +276,42 @@ df['city'] = df['city'].str.strip().str.lower()
 df['height_m'] = df['height'].str.replace('cm','').astype(float) / 100
 ```
 
+**Bagaimana cara kalkulasi data kategorikal? (Encoding)**
+Komputer tidak bisa memproses [data kategorikal](https://developers.google.com/machine-learning/crash-course/categorical-data). Oleh karena itu harus dirubah menjadi angka sebelum masuk model. Ada beberapa metode tergantung data dan kebutuhan handling model.
+
+```python
+from sklearn.preprocessing import OneHotEncoder, LabelEncoder
+import pandas as pd
+
+# Label Encoding
+df['gender_le'] = LabelEncoder().fit_transform(df['gender'])
+# Expected output (contoh):
+#   gender   gender_le
+#   male         1
+#   female       0
+
+# One-hot Encoding
+df = pd.get_dummies(df, columns=['disease'])
+# Expected output (contoh):
+#   disease_flu   disease_covid   disease_dbd
+#        1              0               0
+#        0              1               0
+#        0              0               1
+
+# Target encoding sederhana
+means = df.groupby('category')['target'].mean()
+df['category_te'] = df['category'].map(means)
+# Expected output (contoh):
+#   category   target   category_te
+#      A         1          0.72
+#      B         0          0.30
+#      A         0          0.45
+```
+
+Tiga metode di atas adalah yang paling umum dipakai pada kebanyakan data, namun masih banyak teknik encoding lain seperti ordinal encoding, binary encoding, hashing trick, atau count encoding—pemilihannya bergantung pada jumlah kategori, struktur datanya, dan kebutuhan model.
+
+
+
 Dalam praktiknya ada banyak sekali skenario preprocessing di luar yang telah dibahas—mis. format tidak konsisten, missing values, imbalance, outlier, duplikasi, noise, dan data leakage. Teknik yang dipilih bergantung pada tujuan analisis atau model, karakteristik data, dan trade-off (akurasi vs interpretabilitas vs kompleksitas). Selalu uji efek preprocessing pada data validasi/tes dan dokumentasikan langkah yang diambil.
 
 > [!NOTE] Use Case Prompt for Analysis Scenario
@@ -247,9 +322,16 @@ Dalam praktiknya ada banyak sekali skenario preprocessing di luar yang telah dib
 > - “Explain this complex metric in simple terms.”
 > - “Draft an executive summary for my findings.”
 
+%%
+https://www.kaggle.com/discussions/general/313126
+https://www.kaggle.com/code/rtatman/data-cleaning-challenge-outliers
+https://www.kaggle.com/discussions/general/228307
+https://www.kaggle.com/code/shahules/an-overview-of-encoding-techniques
+%%
 ### EDA
 ^[jenis jenis EDA dan bagaimana cara menanganinya, untuk vidualisasi bbrp library yg bisa dipake apa aja]
 ==problem dari EDA ini aku rasa kurang klep deh, sama yg lain==
+
 
 > [!NOTE] Data Preprocesssing dulu, apa EDA?
 > - Biasanya proses yang dilakukan adalah: mulai dari EDA dulu secara ringan, lalu data preprocessing—dan kedua langkah ini sering dilakukan secara iteratif dan saling melengkapi sesuai kebutuhan data dan tujuan analisis.​​​
@@ -305,7 +387,6 @@ for 1 in range(8, len(cat_list)):
 ```
 
 %%
-https://neptune.ai/blog/feature-selection-methods
 https://towardsdatascience.com/feature-selection-and-eda-in-python-c6c4eb1058a3/
 %%
 ### Statistical Analysis
@@ -503,9 +584,29 @@ Contoh sederhana:
 2. **Feature Extraction** Membuat features baru dari kombinasi features yang sudah ada. Contohnya membuat feature "BMI" dari height dan weight.
 
 3. **Feature Scaling**
+Tujuannya adalah memastikan semua fitur punya skala yang sebanding sehingga berkontribusi secara seimbang terhadap performa model. Ini penting banget untuk algoritma yang sensitif terhadap skala input, seperti model berbasis gradient descent (neural networks, regresi logistik) atau algoritma berbasis jarak (KNN, SVM).
 
-ada istilah istilah yang lebih dalam lagi yaitu 
+```python
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
+ 
+scaler = MinMaxScaler()
 
+data_scaled = scaler.fit_transform(data)
+```
+
+Setelah apply Min-Max scaling, nilai setiap fitur ditransformasi ke rentang [0, 1]. Fitur yang tadinya punya satuan dan skala berbeda-beda, sekarang punya bobot yang comparable.
+
+Selain Min-Max, ada beberapa teknik scaling yang sering dipakai dalam feature engineering:
+
+- **Standardization (Z-score Normalization)**: Mengubah data supaya punya mean = 0 dan standard deviation = 1 dengan rumus `(X - μ) / σ`. Cocok untuk data yang berdistribusi normal dan algoritma yang assume normalitas seperti Linear Regression atau Logistic Regression.
+
+- **Robust Scaling**: Pakai median dan IQR (Interquartile Range) instead of mean dan standard deviation. Lebih tahan terhadap outliers, jadi cocok dipakai ketika dataset kamu punya banyak nilai ekstrem yang nggak bisa langsung di-remove.
+
+%%
+https://neptune.ai/blog/feature-selection-methods
+
+%%
 ### Data Mining
 
 Data mining adalah proses mengekstraksi pola, struktur, atau informasi yang sebelumnya tidak terlihat dari suatu dataset. Di dalamnya digunakan keterampilan **data preprocessing**, teknik **eksplorasi**, dan sering kali algoritma **machine learning** seperti clustering, classification, association rules, dan anomaly detection.
@@ -537,7 +638,7 @@ Machine learning (ML) adalah bagian dari artificial intelligence (AI) yang memun
 
 Dalam praktiknya, proses training ML melibatkan tiga komponen utama: data, model, dan algoritma. Data digunakan sebagai bahan untuk melatih model agar mampu mengenali pola, sedangkan algoritma bertugas mengoptimalkan parameter model berdasarkan umpan balik dari hasil prediksi. Semakin banyak dan berkualitas data yang digunakan, semakin baik model dalam melakukan generalisasi terhadap data baru.
 
-Pada praktiknya, proses modelling cenderung singkat (tidak termasuk running model fitting) jika dibandingkan dengan pemrosesan data. Proses modelling makin cepat karena tinggal memanggil library yang sudah tersedia seperti scikit-learn atau TensorFlow. Adapun untuk kasus tertentu seperti data yang besar atau komputasi yang kompleks bisa menggunakan deep learning/neural network, namun tetap menyesuaikan tujuan dari project dan resource yang tersedia
+Pada praktiknya, proses modelling cenderung singkat (tidak termasuk running model fitting) jika dibandingkan dengan pemrosesan data. Proses modelling makin cepat karena tinggal memanggil library yang sudah tersedia seperti [Scikit-learn](https://scikit-learn.org/stable/) atau [TensorFlow](https://www.tensorflow.org). Adapun untuk kasus tertentu seperti data yang besar atau komputasi yang kompleks bisa menggunakan [deep learning](https://en.wikipedia.org/wiki/Deep_learning)/[neural network](https://en.wikipedia.org/wiki/Neural_network_(machine_learning)), namun tetap menyesuaikan tujuan dari project dan resource yang tersedia
 
 ```python
 import numpy as np
@@ -573,11 +674,11 @@ print(prediksi) # Output: sekitar 240000
 ### Types of Machine Learning
 
 Ada tiga jenis penerapan model ML berdasarkan jenis data:
-- Supervised Learning: Belajar dari data berlabel untuk prediksi. Cocok untuk CV (klasifikasi gambar) dan NLP (analisis sentimen teks). Contoh: Model memprediksi penyakit dari data medis berlabel.
-- Unsupervised Learning: Menemukan pola tanpa label, seperti mengelompokkan data gambar di CV atau topik teks di NLP. Contoh: Mengelompokkan pelanggan berdasarkan perilaku belanja.
-- Reinforcement Learning: Belajar melalui trial-error dengan reward, jarang digunakan di CV/NLP dasar tapi bisa untuk game AI yang melibatkan visi atau bahas
+- [Supervised Learning](https://en.wikipedia.org/wiki/Supervised_learning): Belajar dari data berlabel untuk prediksi. Cocok untuk CV (klasifikasi gambar) dan NLP (analisis sentimen teks). Contoh: Model memprediksi penyakit dari data medis berlabel.
+- [Unsupervised Learning](https://en.wikipedia.org/wiki/Unsupervised_learning): Menemukan pola tanpa label, seperti mengelompokkan data gambar di CV atau topik teks di NLP. Contoh: Mengelompokkan pelanggan berdasarkan perilaku belanja.
+- [Reinforcement Learning](https://en.wikipedia.org/wiki/Reinforcement_learning): Belajar melalui trial-error dengan reward, jarang digunakan di CV/NLP dasar tapi bisa untuk game AI yang melibatkan visi atau bahas
 
-Pemahaman terhadap jenis-jenis machine learning menjadi penting guna memilih teknik yang tepat dalam penerapannya. Scikit-learn merupakan salah satu library Python paling populer yang menyediakan berbagai algoritma dan fungsi siap pakai untuk melatih, menguji, serta mengevaluasi model.
+Pemahaman terhadap jenis-jenis machine learning menjadi penting guna memilih teknik yang tepat dalam penerapannya. [Scikit-learn](https://scikit-learn.org/stable/) merupakan salah satu library Python paling populer yang menyediakan berbagai algoritma dan fungsi siap pakai untuk melatih, menguji, serta mengevaluasi model.
 
 Scikit-learn adalah library Python open source yang banyak digunakan dalam pengembangan ML klasik. Library ini menyediakan beragam algoritma seperti classification, regression, clustering, serta alat bantu untuk model selection dan preprocessing.
 
@@ -617,18 +718,16 @@ flowchart TD
 
 >Pada Data Science Reinforcement Learning jarang disinggung karena masalah yang sering ditemui sudah cukup diselesaikan dengan supervised/unsupervised, RL membutuhkan lingkungan simulasi untuk belajar dari percobaan berulang, dan lebih banyak digunakan pada robotika serta pengembangan game.
 
-
-| Library                   | Primary Use                         | Key Features                               | Best For                                  |
-| ------------------------- | ----------------------------------- | ------------------------------------------ | ----------------------------------------- |
-| TensorFlow                | Deep learning model building/deploy | High/low-level APIs, scalability           | Production with unstructured data         |
-| PyTorch                   | Flexible DL prototyping             | Dynamic graphs, easy debugging             | Research, NLP/computer vision             |
-| Keras                     | Simplified neural networks          | User-friendly interface, community support | Beginners, quick prototyping              |
-| Hugging Face Transformers | NLP/LLM tasks                       | Pre-trained models, transfer learning      | Text generation, chatbots                 |
-| OpenAI API                | Generative AI integration           | Multimodal capabilities, fine-tuning       | Rapid app development without hosting     |
-| Scikit-learn              | Traditional ML                      | Data processing, evaluation tools          | Small datasets, classification/regression |
-| XGBoost                   | Gradient boosting                   | High performance, scalability              | Tabular data, competitions                |
-| LangChain                 | LLM apps                            | Prompt chaining, memory management         | Complex workflows, agents                 |
-
+| Library                                                                        | Primary Use                         | Key Features                               | Best For                                  |
+| ------------------------------------------------------------------------------ | ----------------------------------- | ------------------------------------------ | ----------------------------------------- |
+| [TensorFlow](https://www.tensorflow.org)                                       | Deep learning model building/deploy | High/low-level APIs, scalability           | Production with unstructured data         |
+| [PyTorch](https://pytorch.org)                                                 | Flexible DL prototyping             | Dynamic graphs, easy debugging             | Research, NLP/computer vision             |
+| [Keras](https://keras.io)                                                      | Simplified neural networks          | User-friendly interface, community support | Beginners, quick prototyping              |
+| [Hugging Face Transformers](https://huggingface.co/docs/transformers/en/index) | NLP/LLM tasks                       | Pre-trained models, transfer learning      | Text generation, chatbots                 |
+| [OpenAI API](https://platform.openai.com/docs/overview)                        | Generative AI integration           | Multimodal capabilities, fine-tuning       | Rapid app development without hosting     |
+| [Scikit-learn](https://scikit-learn.org/stable/)                               | Traditional ML                      | Data processing, evaluation tools          | Small datasets, classification/regression |
+| [XGBoost](https://xgboost.readthedocs.io/en/stable/)                           | Gradient boosting                   | High performance, scalability              | Tabular data, competitions                |
+| [LangChain](https://docs.langchain.com)                                        | LLM apps                            | Prompt chaining, memory management         | Complex workflows, agents                 |
 
 Pada penerapannya itu tergantung problemnya, jangan pakai yang berat jika problem yang ditemuin sederhana cukup. _Start simple, scale when proven._
 
@@ -639,7 +738,7 @@ Pada penerapannya itu tergantung problemnya, jangan pakai yang berat jika proble
 ### Model Training and Evaluation data
 ^[(left)  nyinggung dikit library tdi, code snippest python buat model training (right) gambar beserta penjelasan training, validastion, dan test,3 pertanyaan ttg data ini,aset gambar, (right) implementasi kode dan penjelasan, split model sebelum training, teori pemisahan data (dalam bentuk gambar)]
 
-Terima kasih kepada Python dan library seperti scikit-learn, sekarang nerapin model ML tinggal beberapa baris kode. Fokus kita lebih ke penyesuaian parameter yang tepat untuk model dan memahami bagaimana data dibagi dengan benar. Pemilihan parameter dan strategi validation inilah yang menentukan apakah model kita benar-benar reliable atau hanya bagus di data training.
+Terima kasih kepada Python dan library seperti scikit-learn, sekarang nerapin model ML tinggal menulis beberapa baris kode. Fokus kita sekarang lebih ke milih parameter yang tepat untuk model dan memahami bagaimana cara bagi data dengan benar. Pemilihan parameter dan strategi validation inilah yang menentukan apakah model kita benar-benar reliable atau hanya bagus di data training.
 
 ```python
 # ... import model scikit-learn
@@ -657,19 +756,23 @@ predictions = model.predict(X_test)
 Dalam praktiknya, data dibagi menjadi tiga bagian dengan fungsi yang berbeda
 
 1. Training Dataset
-Data yang digunakan untuk melatih model—di sinilah model belajar mengenali pola.
+Data yang digunakan untuk melatih model, di sinilah model belajar mengenali pola.
 
 2. Validation Dataset:
-Data yang digunakan untuk evaluasi model selama proses tuning hyperparameter. Dataset ini membantu kita menyesuaikan konfigurasi model tanpa "menyentuh" test data, sehingga evaluasi tetap objektif.
+Data yang digunakan untuk evaluasi model selama proses tuning [hyperparameter](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)). Dataset ini membantu kita menyesuaikan konfigurasi model tanpa "menyentuh" test data, sehingga evaluasi tetap objektif.
 
 3. Test Dataset:
-Data yang digunakan untuk evaluasi final model. Dataset ini sama sekali tidak digunakan selama training atau tuning, sehingga memberikan gambaran performa model yang paling objektif.
+Data yang digunakan untuk evaluasi final model. Dataset ini sama sekali tidak digunakan selama training atau tuning, sehingga memberikan gambaran performa model yang objektif.
+
+![[Pasted image 20251129190829.png|Train Validation and Test]]
 
 >[!INFO]
 >💡 Coba https://github.com/andre1araujo/Supervised-and-Unsupervised-Learning-Examples/. Kode ini ngejelasin lebih dalam implementasi ML unsupervised dan supervised sapa tahu mau dibaca lebih lanjut
 
 ==perlu satu halaman lagi==
+==overall tahapan dalam machine learning==
 
+**Validation test**
 Pemilihan strategi validation bergantung pada tiga hal: ukuran dataset, tipe problem, dan resource komputasi yang tersedia. Dataset besar bisa pakai holdout untuk efisiensi, dataset kecil butuh K-Fold atau bahkan LOOCV untuk maksimalkan data usage. Kalau datanya imbalanced, stratified approach jadi penting untuk jaga distribusi class. Berikut perbandingan dalam tabel:
 
 | Strategy                | When to Use                     | Pros                   | Cons                               |
@@ -678,7 +781,21 @@ Pemilihan strategi validation bergantung pada tiga hal: ukuran dataset, tipe pro
 | K-Fold Cross-Validation | Most general supervised tasks   | Robust, efficient      | Slower than holdout                |
 | Stratified K-Fold       | Imbalanced classification tasks | Preserves class ratios | Slightly more complex              |
 | LOOCV                   | Small datasets, high precision  | Maximum data use       | Very slow, overkill for large sets |
+
+Setelah tahapan ini setelah 
+1) Divide the available data into training, validation and test set  
+2) Select an algorithm and training parameters  
+3) Train the model using the training set  
+4) Evaluate the model using the validation set  
+5) Repeat steps 2 through 4 using different algorithms and training parameters  
+6) Select the best model and train it using data from the training and validation set  
+7) Assess this final model using the test set.
+
 ==perlu penutup keknya==
+
+%%
+https://scikit-learn.org/stable/model_selection.html
+%%
 ### Hyperparameter tuning
 ^[dari pengembangan model ke penjelasan hyperparameter, 2 metode hyperparameter tuning beserta plot dan code, automated hyperparameter tuning]
 
@@ -698,25 +815,77 @@ Hyperparameter tuning adalah proses sistematis mencari nilai-nilai optimal untuk
 | Dioptimasi selama proses training  | Membatasi algoritma model |
 Proses mencari hyperparameter terbaik untuk dataset tertentu disebut Hyperparameter Tuning atau Hyperparameter Optimization.
 
-==merancang metode metode hyperparameter tuning==
-Methods methodsnya
+Different hyperparameter optimization strategies:
 
-Different hyperparamete optimization strategies:
+ 1. **Manual Search**
+ 
+ Metode ini dilakukan dengan mencoba kombinasi hyperparameter secara manual. Cocok untuk eksplorasi awal ketika jumlah parameter sedikit.
 
-> - Manual Search
-> - Grid Search
-> - Random Search
-> - Bayesian Optimization
+```python
+from sklearn.ensemble import RandomForestClassifier
 
-==automated hyperparameter tuning==
+best = (None, 0)
 
+for n in [50,100]:
+    for d in [5,10]:
+        m = RandomForestClassifier(n_estimators=n, max_depth=d).fit(X_train, y_train)
+        s = m.score(X_val, y_val)
+        if s > best[1]: best = ((n,d), s)
 
-==perlu quotes==
+print(best)
+```
+
+ 2. Grid Search
+ 
+`GridSearchCV` melakukan pencarian dengan mencoba semua kombinasi nilai parameter yang kamu definisikan dalam sebuah “grid”. Saat kamu menjalankan _fit_, Grid Search akan mengevaluasi setiap kombinasi dengan cross-validation dan memilih yang performanya terbaik.
+
+Pendekatan ini cocok ketika jumlah parameter sedikit atau rentang nilainya tidak terlalu besar, karena hasilnya konsisten dan sistematis.
+
+> [!NOTE] Read More:
+> - See [Nested versus non-nested cross-validation](https://scikit-learn.org/stable/auto_examples/model_selection/plot_nested_cross_validation_iris.html#sphx-glr-auto-examples-model-selection-plot-nested-cross-validation-iris-py) for an example of Grid Search within a cross validation loop on the iris dataset. This is the best practice for evaluating the performance of a model with grid search.
+> 
+> - See [Sample pipeline for text feature extraction and evaluation](https://scikit-learn.org/stable/auto_examples/model_selection/plot_grid_search_text_feature_extraction.html#sphx-glr-auto-examples-model-selection-plot-grid-search-text-feature-extraction-py) for an example of Grid Search coupling parameters from a text documents feature extractor (n-gram count vectorizer and TF-IDF transformer) with a classifier (here a linear SVM trained with SGD with either elastic net or L2 penalty) using a [`Pipeline`](https://scikit-learn.org/stable/modules/generated/sklearn.pipeline.Pipeline.html#sklearn.pipeline.Pipeline "sklearn.pipeline.Pipeline") instance.
+>  
+
+ 3. Random Search
+
+ Meskipun Grid Search lebih sering digunakan, namun terkadang Random Search sering lebih efisien. `RandomizedSearchCV` melakukan pencarian hyperparameter dengan mengambil sampel acak dari lingkup ruang parameter. 2 kondisi ketika random search lebih kepake: 
+
+- Bisa membatasi pencarian berdasarkan jumlah iterasi tanpa terikat banyaknya parameter.
+- Menambahkan parameter baru yang kurang berpengaruh, sehingga tidak membuat proses menjadi lebih lambat.
+
+> [!NOTE] Baca lebih lanjut:
+> - [Comparing randomized search and grid search for hyperparameter estimation](https://scikit-learn.org/stable/auto_examples/model_selection/plot_randomized_search.html#sphx-glr-auto-examples-model-selection-plot-randomized-search-py) compares the usage and efficiency of randomized search and grid search.
+
+```python
+from sklearn.model_selection import GridSearchCV
+from sklearn.ensemble import RandomForestClassifier
+
+param_grid = {
+    'n_estimators': [10, 50, 100, 200],
+    'max_depth': [None, 10, 20],
+    'min_samples_split': [2, 5, 10]
+}
+
+# Grid Search
+gs = GridSearchCV(RandomForestClassifier(), params, cv=3)
+
+# Random Search
+rs = RandomizedSearchCV(RandomForestClassifier(), params, n_iter=10, cv=3)
+
+gs.fit(X_train, y_train)
+print(gs.best_params_, gs.best_score_)
+```
+
+>[!INFO]
+>💡 Jika ingin membaca lebih terkait proses otomisasi dalam tuning model, seperti [Hyperopt](https://optuna.org), [Optuna](https://optuna.org), hingga pendekatan otomatis pada ANNs—kamu bisa membaca notebook berikut untuk pembahasan yang lebih lengkap:
+ https://www.kaggle.com/code/pavansanagapati/automated-hyperparameter-tuning
 
 %%
 [https://www.kaggle.com/discussions/general/171856](https://www.kaggle.com/discussions/general/171856)
 [https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning](https://www.kaggle.com/code/faressayah/hyperparameter-optimization-for-machine-learning)
 https://www.kaggle.com/code/shreayan98c/hyperparameter-tuning-tutorial#Logistic-Regression
+https://scikit-learn.org/stable/modules/grid_search.html
 %%
 ### Ensemble Learning
 ^[jenis-jenis dan penerapannya dalam beberapa studi kasus, ringkasan algoritma serta teknik teknik lainnya]
@@ -760,7 +929,6 @@ https://ml-course.github.io/master/notebooks/04%20-%20Ensemble%20Learning.html
 %%
 ## Great Books on Everything Data and Machine Learning
 ^[ditutup dengan resources buku yang bisa dibaca dan bagus untuk belajar data dan ml]
-
 ### AI and Machine Learning
 
 [AI and Machine Learning for Coders](https://www.amazon.com/Machine-Learning-Coders-Programmers-Intelligence/dp/1492078190) → Good starter especially if you have strong programming background.
@@ -775,13 +943,11 @@ https://ml-course.github.io/master/notebooks/04%20-%20Ensemble%20Learning.html
 
 [Machine Learning Yearning](https://info.deeplearning.ai/machine-learning-yearning-book) → Very great book by Andrew Ng, covering bits of problems and its solutions, this book cover a great range of practical problems and focus more on problem solving in the field rather than modelling tutorials. Each topic is 1-2 page long which is great for a quick read.
 
-### Kaggle and Interviews
+### Kaggle
 
 [The Kaggle Book: Data analysis and machine learning for competitive data science](https://www.amazon.com/Data-Analysis-Machine-Learning-Kaggle/dp/1801817472) → The go to book if you want to focus on Kaggle competitions.
 
 [The Kaggle Workbook: Self-learning exercises and valuable insights for Kaggle data science competitions](https://www.amazon.com/Kaggle-Workbook-Self-learning-exercises-competitions/dp/1804611212) → Other part of the Kaggle book, great insights and exercises, this is currently on my reading queue as well.
-
-[Ace the Data Science Interview](https://www.amazon.com/Ace-Data-Science-Interview-Questions/dp/0578973839) → Great for interview preps, this is sort of cracking the coding interview thing but for Data Science.
 
 ### Statistics
 
@@ -806,3 +972,13 @@ https://ml-course.github.io/master/notebooks/04%20-%20Ensemble%20Learning.html
 [Building a Second Brain](https://www.amazon.com/Building-Second-Brain-Organize-Potential/dp/B09MGFGV3J/) → A book that kickstarted my note taking journey, this helps me take notes with purpose and help me remember and document a lot of hard concepts easier.
 
 [How to be a Productivity Ninja](https://www.amazon.com/How-Productivity-Ninja-Worry-Achieve/dp/1848316836) → Very great book on productivity, the book provides great tips and techniques which helped me a lot.
+
+---
+
+## Next Steps
+
+Buku ini belum sepenuhnya selesai. Versi yang kamu baca sekarang berfungsi sebagai fondasi awal untuk memahami data, mengenali teknik penanganan terhadap data, memilih metode yang tepat, dan membangun proyek ML untuk prototype. Dengan dasar ini, kamu sudah bisa mulai mengerjakan proyek AI secara lebih terarah.
+
+Ke depannya, buku ini akan terus diperbarui dengan materi lanjutan yang lebih fokus ke AI Engineering, termasuk pembahasan tentang Generative AI, teknik implementasinya, serta konsep AI Agents yang mampu menjalankan tugas secara otomatis dan adaptif. Pembaruan ini akan melengkapi kerangka yang sudah ada, menjadikan buku ini panduan yang tetap relevan, dari tahap belajar sampai build proyek yang siap pakai.
+
+Terima kasih sudah membaca sampai akhir. Nantikan update berikutnya.
