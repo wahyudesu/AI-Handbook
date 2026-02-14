@@ -1077,6 +1077,8 @@ Meskipun stacking terkesan kompleks, namun menggunakan stacking dapat meningkatk
 - Cross-validation selection: does internal cross-validation to select best of $M$ models
 - Any combination of different ensembling techniques
 
+### Wahyuu
+
 %%
 [https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)
 https://www.kaggle.com/code/anuragbantu/stacking-ensemble-learning-beginner-s-guide
@@ -1127,6 +1129,7 @@ https://ml-course.github.io/master/notebooks/04%20-%20Ensemble%20Learning.html
 [Building a Second Brain](https://www.amazon.com/Building-Second-Brain-Organize-Potential/dp/B09MGFGV3J/) → A book that kickstarted my note taking journey, this helps me take notes with purpose and help me remember and document a lot of hard concepts easier.
 
 [How to be a Productivity Ninja](https://www.amazon.com/How-Productivity-Ninja-Worry-Achieve/dp/1848316836) → Very great book on productivity, the book provides great tips and techniques which helped me a lot.
+
 
 ---
 
