@@ -20,8 +20,10 @@
 - bab 3 - ml: penjelasan umum
 - bab 3 - hyperparameter: banyak teorinya sama kayak statistical analysis
 - bab 3 - ensemble: paling daging, banyak teori sekaligus prakteknya
-- bab 4 - Pre-Trained: pytorch
-- bab 5 - 
+- bab 4 - dgn pytorch itu bikin neural network
+- bab 4 - manfaatin model yg udh dibuat/udh ada
+- bab 4 - model LLM secara teori dan text generation on different use case
+- bab 5 - implemtntasi lebih lanjut dari LLM
 
 jenis-jenis lalu penjabarannya
 - ensemble: ringkasan 

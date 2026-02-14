@@ -50,12 +50,12 @@ unique value: buku pedoman compact, tanpa bertele tele
 	- [[#Great Books on Everything Data and Machine Learning#Statistics|Statistics]]
 	- [[#Great Books on Everything Data and Machine Learning#Data Engineering|Data Engineering]]
 	- [[#Great Books on Everything Data and Machine Learning#Productivity and Habits|Productivity and Habits]]
-
 ## Pengantar
 
 Data dan kecerdasan buatan (AI) sekarang sudah jadi bagian penting di banyak bidang—bisnis, pendidikan, sampai riset ilmiah. Perkembangannya yang super cepat bikin kebutuhan akan orang yang paham data dan ML terus naik. Alhasil, kemampuan praktikal dalam data science dan machine learning jadi skill wajib buat mahasiswa maupun praktisi yang ingin membangun portofolio proyek yang solid.
 
 Masalahnya, materi belajar tentang data dan AI itu tersebar dan sering tidak terstruktur. Di Indonesia sendiri, sumber yang ringkas, relevan, dan berbahasa Indonesia masih terbatas, sementara banyak pilihan belajar malah panjang, dan mahal, atau terlalu fokus ke teori. Akhirnya banyak orang bingung harus mulai dari mana, padahal yang dibutuhkan sebenarnya panduan praktis yang bisa langsung dipakai untuk ngerjain proyek, ikut kompetisi, atau membangun solusi AI sederhana.
+jashdghfkjhasgdfkjhasgdfkjhasdf
 
 Handbook ini disusun untuk menjawab kebutuhan tersebut. Dengan format yang compact, praktikal, dan mudah dipahami, buku ini membantu pembaca mempelajari dasar-dasar data science dan machine learning secara cepat dan tepat sasaran. Materinya dikurasi dari pengalaman langsung, baik dari perkuliahan data science maupun pengerjaan proyek di dunia kerja, sehingga pembaca bisa fokus pada konsep yang penting, applicable, dan yang paling penting berbahasa Indonesia.
 

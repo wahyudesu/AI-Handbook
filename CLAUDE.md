@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-This is an **AI/Data Science Handbook** project written in Markdown, designed as a compact practical guide for Indonesian students learning data science and machine learning. The target audience is university students, competition participants, and practitioners.
+This is an **AI/Data Science Handbook** project written in Markdown, designed as a compact practical guide for Indonesian students learning data science and machine learning for the short time, sehingga . The target audience is university students, competition participants, and practitioners.
 
 ## Project Structure
 
@@ -94,7 +94,5 @@ The handbook is approximately **75% complete** per the frontmatter. Chapters 1-3
 
 ## Development Tasks
 
-Current priorities from `project.md`:
-- [ ] Collect feedback and suggestions
-- [ ] Develop chapters 4 and 5
-- [ ] Target: ~1000 lines for the handbook
+now: 9,040 words, 70,000 characters
+expected: 10,000 words, 100,000 characters
