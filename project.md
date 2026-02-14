@@ -5,7 +5,9 @@
 - gambar: intinya gambar punya orang untuk mempermudah memahami sesuatu
 - kode: kode contoh penggunaan library/framework, penggunaan 
 - quotes: bisa berupa recommendation, question
-
+- [^footnotes]: deskripsi bab
+- %%commentar%%: references
+- ==highlight==: komentar
 
 ### Alur isi tiap bab
 
@@ -18,6 +20,8 @@
 - bab 3 - ml: penjelasan umum
 - bab 3 - hyperparameter: banyak teorinya sama kayak statistical analysis
 - bab 3 - ensemble: paling daging, banyak teori sekaligus prakteknya
+- bab 4 - Pre-Trained: pytorch
+- bab 5 - 
 
 jenis-jenis lalu penjabarannya
 - ensemble: ringkasan 
