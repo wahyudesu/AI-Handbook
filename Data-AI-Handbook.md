@@ -44,6 +44,7 @@ unique value: buku pedoman compact, tanpa bertele tele
 	- [[#Model and Evaluation#Model Training and Evaluation data|Model Training and Evaluation data]]
 	- [[#Model and Evaluation#Hyperparameter tuning|Hyperparameter tuning]]
 	- [[#Model and Evaluation#Ensemble Learning|Ensemble Learning]]
+- [[#Model and evaluasi|Model]]
 - [[#Great Books on Everything Data and Machine Learning|Great Books on Everything Data and Machine Learning]]
 	- [[#Great Books on Everything Data and Machine Learning#AI and Machine Learning|AI and Machine Learning]]
 	- [[#Great Books on Everything Data and Machine Learning#Kaggle and Interviews|Kaggle and Interviews]]
@@ -1076,6 +1077,89 @@ Meskipun stacking terkesan kompleks, namun menggunakan stacking dapat meningkatk
 - Cross-validation selection: does internal cross-validation to select best of $M$ models
 - Any combination of different ensembling techniques
 
+
+## Deep Learning, PyTorch, dan Era Generative AI
+### Membangun Neural Network dengan PyTorch
+^[Bab ini fokus pada transisi dari machine learning klasik ke deep learning, implementasi neural network menggunakan PyTorch, teknik transfer learning untuk efisiensi komputasi, dan pengenalan praktis terhadap Large Language Models (LLM).]
+Kalau di bab sebelumnya kita membahas algoritma ML klasik yang luar biasa efisien untuk data tabular, sekarang kita masuk ke ranah data yang tidak terstruktur (unstructured data) seperti gambar, audio, dan teks bahasa alami yang kompleks. Di sinilah _Deep Learning_ (DL) bersinar.
+
+Deep Learning menggunakan arsitektur _Artificial Neural Network_ (ANN) yang terinspirasi dari jaringan saraf otak. Alih-alih melakukan _feature engineering_ secara manual (seperti mencari tepi gambar atau menghitung frekuensi kata), model DL mampu mengekstraksi fitur-fitur tersebut secara hierarkis dan otomatis langsung dari data mentah.
+
+**Membangun Neural Network dengan Pytorch**
+Saat ini Pytorch menjadi standar industri karena pendekatannya yang sangat *Pythonic* dan menggunakan [*Dynamic Computational Graph*](https://www.geeksforgeeks.org/deep-learning/dynamic-vs-static-computational-graphs-pytorch-and-tensorflow/). Dimana, kamu bisa debugging model jaringan sarafmu semudah kamu melakukan`print()`pada kode python biasa
+
+Dalam praktiknya, Neural Network  terdiri dari tiga bagian utama: Input, Hidden Layers (tempat kalkulasi utama), dan Output.
+
+Setiap koneksi antar "neuron" memiliki bobot (_weights_). Tujuan dari proses _training_ adalah mencari kombinasi bobot yang paling optimal agar prediksi (output) sesuai dengan target sebenarnya, menggunakan algoritma optimasi seperti *[Gradient Descent](https://www.ibm.com/think/topics/gradient-descent#:~:text=Gradient%20descent%20is%20an%20optimization,between%20predicted%20and%20actual%20results.)* dan proses hitung mundur yang disebut [_Backpropagation_](_Backpropagation_).
+```python
+import torch 
+import torch.nn as nn 
+import torch.optim as optim
+
+# 1. Mendefinisikan Arsitektur Model (Subclassing nn.Module) 
+class SimpleClassifier(nn.Module): 
+	def __init__(self, input_size, num_classes): 
+		super(SimpleClassifier, self).__init__() 
+		# Hidden layer pertama: mengubah dimensi input menjadi 64 
+		self.layer1 = nn.Linear(input_size, 64) 
+		self.relu = nn.ReLU() 
+		# Fungsi aktivasi non-linear 
+		# Output layer: mengubah 64 menjadi jumlah kelas target 
+		self.layer2 = nn.Linear(64, num_classes) 
+
+def forward(self, x): 
+	# Alur maju (Forward pass) 
+	out = self.layer1(x) 
+	out = self.relu(out) 
+	out = self.layer2(out) 
+	return out
+
+# 2. Inisialisasi Model, Loss, dan Optimizer 
+model = SimpleClassifier(input_size=20, num_classes=2) 
+criterion = nn.CrossEntropyLoss() # Sering dipakai untuk klasifikasi 
+optimizer = optim.Adam(model.parameters(), lr=0.001) 
+# Dummy data forward pass 
+dummy_input = torch.randn(5, 20) # 5 sampel, 20 fitur 
+prediksi = model(dummy_input) 
+print(prediksi.shape) # Output: torch.Size([5, 2])
+```
+>[!INFO]
+>💡 Berbeda dengan Scikit-Learn yang tinggal panggil `.fit()`, di PyTorch kamu harus menulis _training loop_ secara manual (menghitung loss, reset gradient dengan `optimizer.zero_grad()`, dan update bobot dengan `optimizer.step()`). Ini memberikan kontrol penuh, namun jika ingin lebih instan, kamu bisa menggunakan _wrapper_ seperti [PyTorch Lightning](https://lightning.ai/).
+
+%% Referensi: Paszke, A., et al. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library. %%
+
+**Transfer Learning**
+Membangun dan melatih model deep learning dari nol (*from scratch*) membutuhkan dataset raksasa (jutaan sampel) dan komputasi GPU yang mahal berhari-hari. Di dunia nyata , solusi untuk masalah ini adalah ==Tranfer Learning==. 
+Idenya sederhana : Kita mengambil "otak" dari model yang sudah dilatih oleh raksasa teknologi pada dataset masif (seperti Imagenet yang berisi 14 juta gambar), lalu kita sesuaikan sedikit untuk tugas spesifik kita. 
+
+| Strategi Transfer Learning | Kapan Digunakan ?                                             | Penjelasan                                                                                                                     |
+| -------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Feature Extraction         | Datataset baru berukuran kecil & mirip dengan data asli model | Kunci (_freeze_) seluruh _hidden layers_. Hanya ganti dan latih _output layer_ yang baru. Cepat dan menghindari _overfitting_. |
+| Fine-Tuning                | Dataset baru berukuran lumayan besar                          | Buka kunci (_unfreeze_) beberapa _layer_ terakhir agar model bisa sedikit beradaptasi dengan fitur spesifik pada data barumu.  |
+
+```python
+import torchvision.models as models
+
+# 1. Unduh pre-trained model ResNet18 (sudah terlatih mengenali 1000 objek)
+model_tl = models.resnet18(weights='DEFAULT')
+
+# 2. Feature Extraction: Freeze semua parameter bawaan 
+for param in model_tl.parameters(): 
+	param.requires_grad = False
+	
+# 3. Ganti kepala (output layer) sesuai kebutuhan proyek kita (misal: 3 penyakit daun) 
+num_ftrs = model_tl.fc.in_features 
+model_tl.fc = nn.Linear(num_ftrs, 3)
+
+# Sekarang, hanya model_tl.fc yang akan diupdate bobotnya saat training!
+```
+
+%% He, K., et al. (2016). Deep Residual Learning for Image Recognition. CVPR. %%
+
+**Large Language Models (LLM) dan Text Geneartion** 
+Perkembangan  masif di era AI saat ini didorong oleh model berbasis arsitektur [Transformer](https://www.ibm.com/think/topics/transformer-model). Berbeda dengan model teks jadul (RNN/LSTM) yang membaca kalimat kata per kata, Transformer memproses seluruh kata secara paralel.
+
+Rahasia utamanya ada pada mekanisme ==Self-Attention==. Mekanisme ini memungkinkan model untuk menimbang tingkat pentingnya setiap kata terhadap kata lain dalam satu kalimat, terlepas dari seberapa jauh jaraknya . Inilah cikal bakal lahirnya model raksasa (LLM) seperti GPT, BERT, Llama, dan Claude. 
 
 %%
 [https://www.youtube.com/watch?v=LsPi2wPZft8](https://www.youtube.com/watch?v=LsPi2wPZft8)
